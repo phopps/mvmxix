@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://World/TileSet.tres" type="TileSet" id=1]
-[ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Tiles/TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Entities/Actor/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/World.cs" type="Script" id=3]
 
 [node name="World" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Background" type="ColorRect" parent="."]
 margin_right = 720.0

@@ -23,34 +23,37 @@
 ```txt
 📦mvmxix
  ┣ 📂Entities
- ┃ ┣ 📜Player.cs
- ┃ ┗ 📜Player.tscn
+ ┃ ┗ 📂Actor
+ ┃ ┃ ┣ 📂Enemy
+ ┃ ┃ ┗ 📂Player
+ ┃ ┃ ┃ ┣ 📜Player.cs
+ ┃ ┃ ┃ ┣ 📜Player.png
+ ┃ ┃ ┃ ┣ 📜Player.png.import
+ ┃ ┃ ┃ ┗ 📜Player.tscn
  ┣ 📂World
- ┃ ┣ 📜Player.aseprite
- ┃ ┣ 📜Player.png
- ┃ ┣ 📜Player.png.import
- ┃ ┣ 📜TileBottomLeft.aseprite
- ┃ ┣ 📜TileBottomLeft.png
- ┃ ┣ 📜TileBottomLeft.png.import
- ┃ ┣ 📜TileBottomRight.aseprite
- ┃ ┣ 📜TileBottomRight.png
- ┃ ┣ 📜TileBottomRight.png.import
- ┃ ┣ 📜TileCenter.aseprite
- ┃ ┣ 📜TileCenter.png
- ┃ ┣ 📜TileCenter.png.import
- ┃ ┣ 📜TileSet.tres
- ┃ ┣ 📜TileTopLeft.aseprite
- ┃ ┣ 📜TileTopLeft.png
- ┃ ┣ 📜TileTopLeft.png.import
- ┃ ┣ 📜TileTopRight.aseprite
- ┃ ┣ 📜TileTopRight.png
- ┃ ┣ 📜TileTopRight.png.import
+ ┃ ┣ 📂Bootsplash
+ ┃ ┃ ┣ 📜bootsplash.png
+ ┃ ┃ ┗ 📜bootsplash.png.import
+ ┃ ┣ 📂Icons
+ ┃ ┃ ┣ 📜icon.ico
+ ┃ ┃ ┣ 📜icon.png
+ ┃ ┃ ┗ 📜icon.png.import
+ ┃ ┣ 📂Tiles
+ ┃ ┃ ┣ 📜TileBottomLeft.png
+ ┃ ┃ ┣ 📜TileBottomLeft.png.import
+ ┃ ┃ ┣ 📜TileBottomRight.png
+ ┃ ┃ ┣ 📜TileBottomRight.png.import
+ ┃ ┃ ┣ 📜TileCenter.png
+ ┃ ┃ ┣ 📜TileCenter.png.import
+ ┃ ┃ ┣ 📜TileSet.tres
+ ┃ ┃ ┣ 📜TileTopLeft.png
+ ┃ ┃ ┣ 📜TileTopLeft.png.import
+ ┃ ┃ ┣ 📜TileTopRight.png
+ ┃ ┃ ┗ 📜TileTopRight.png.import
+ ┃ ┣ 📜World.cs
  ┃ ┗ 📜World.tscn
  ┣ 📜.gitignore
  ┣ 📜default_env.tres
- ┣ 📜icon.ico
- ┣ 📜icon.png
- ┣ 📜icon.png.import
  ┣ 📜LICENSE
  ┣ 📜mvmxix.csproj
  ┣ 📜mvmxix.sln
