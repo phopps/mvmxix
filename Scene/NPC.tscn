@@ -19,7 +19,7 @@ region = Rect2( 64, 0, 32, 32 )
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
-"name": "default",
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -32,12 +32,13 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -12 )
 frames = SubResource( 4 )
+animation = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 3, -6 )
 shape = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 autostart = true
