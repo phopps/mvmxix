@@ -14,10 +14,4 @@ public class Actor : KinematicBody2D
         {"right", Vector2.Right},
         {"idle", Vector2.Zero}
     };
-
-    public void Movement(string dir) // may need to be virtual to override later
-    {
-        // GetNode<AnimationPlayer>("AnimationPlayer").Play(dir);
-        GD.Print("Moving" + dir);
-    }
 }
