@@ -4,7 +4,7 @@
 
 - [C# basics](https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_basics.html)
 - [C# API differences to GDScript](https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_differences.html)
-- Use 2 spaces instead of tabs
+- Use 4 spaces instead of tabs
 - Use `PascalCase` instead of `snake_case`:
   - Use `PascalCase` for all namespaces, type names and member level identifiers (i.e. methods, properties, constants, events), except for private fields
   - Use `camelCase` for all other identifiers (i.e. local variables, method arguments), and use an underscore (`_`) as a prefix for private fields (but not for methods or properties, as explained above)
@@ -21,45 +21,42 @@
 ## Filetree
 
 ```txt
-📦MVMXIX
- ┣ 📂Art
- ┃ ┣ 📜Circle.png
- ┃ ┣ 📜Circle.png.import
- ┃ ┣ 📜icon.png
- ┃ ┣ 📜icon.png.import
- ┃ ┣ 📜Screenshot.png
- ┃ ┣ 📜Screenshot.png.import
- ┃ ┣ 📜Screenshot2.png
- ┃ ┣ 📜Screenshot2.png.import
- ┃ ┣ 📜Tileset.png
- ┃ ┗ 📜Tileset.png.import
- ┣ 📂Platforms
- ┃ ┣ 📜CirclePlatform.gd
- ┃ ┣ 📜CirclePlatform.tscn
- ┃ ┣ 📜MovingPlatform.gd
- ┃ ┣ 📜MovingPlatform.tscn
- ┃ ┗ 📜TileMap.tscn
- ┣ 📂Player
- ┃ ┣ 📜Player.gd
- ┃ ┣ 📜Player.gdshader
- ┃ ┣ 📜Player.tscn
- ┃ ┗ 📜Sprite.gd
- ┣ 📂ScreenCamera
- ┃ ┣ 📜ScreenCamera.gd
- ┃ ┗ 📜ScreenCamera.tscn
+📦mvmxix
+ ┣ 📂Entities
+ ┃ ┗ 📂Actor
+ ┃ ┃ ┣ 📂Enemy
+ ┃ ┃ ┗ 📂Player
+ ┃ ┃ ┃ ┣ 📜Player.cs
+ ┃ ┃ ┃ ┣ 📜Player.png
+ ┃ ┃ ┃ ┣ 📜Player.png.import
+ ┃ ┃ ┃ ┗ 📜Player.tscn
  ┣ 📂World
- ┃ ┣ 📜Background.gdshader
- ┃ ┣ 📜World.gd
- ┃ ┣ 📜World.gdshader
+ ┃ ┣ 📂Bootsplash
+ ┃ ┃ ┣ 📜bootsplash.png
+ ┃ ┃ ┗ 📜bootsplash.png.import
+ ┃ ┣ 📂Icons
+ ┃ ┃ ┣ 📜icon.ico
+ ┃ ┃ ┣ 📜icon.png
+ ┃ ┃ ┗ 📜icon.png.import
+ ┃ ┣ 📂Tiles
+ ┃ ┃ ┣ 📜TileBottomLeft.png
+ ┃ ┃ ┣ 📜TileBottomLeft.png.import
+ ┃ ┃ ┣ 📜TileBottomRight.png
+ ┃ ┃ ┣ 📜TileBottomRight.png.import
+ ┃ ┃ ┣ 📜TileCenter.png
+ ┃ ┃ ┣ 📜TileCenter.png.import
+ ┃ ┃ ┣ 📜TileSet.tres
+ ┃ ┃ ┣ 📜TileTopLeft.png
+ ┃ ┃ ┣ 📜TileTopLeft.png.import
+ ┃ ┃ ┣ 📜TileTopRight.png
+ ┃ ┃ ┗ 📜TileTopRight.png.import
+ ┃ ┣ 📜World.cs
  ┃ ┗ 📜World.tscn
- ┣ 📜.gitattributes
  ┣ 📜.gitignore
  ┣ 📜default_env.tres
- ┣ 📜export_presets.cfg
- ┣ 📜icon.ico
- ┣ 📜LICENSE.md
- ┣ 📜MVMXIX.csproj
- ┣ 📜MVMXIX.sln
+ ┣ 📜LICENSE
+ ┣ 📜mvmxix.csproj
+ ┣ 📜mvmxix.sln
  ┣ 📜project.godot
  ┗ 📜README.md
 ```
