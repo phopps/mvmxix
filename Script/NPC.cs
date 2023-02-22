@@ -39,7 +39,7 @@ public class NPC : Actor
         MoveAndCollide(velocity);
     }
 
-    public void OnTimerTimeout()
+    public void _OnTimerTimeout()
     {
         randomNum = Rng.Next(0, 3);
         NPCDelay.Start();
