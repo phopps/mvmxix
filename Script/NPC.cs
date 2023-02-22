@@ -29,7 +29,13 @@ public class NPC : Actor
     public void NPCMovement()
     {
         velocity = moveDirections.ElementAt(randomNum).Value;
-        // NPCSprite.Play("walk");
+        if (velocity.x > 0)
+            NPCSprite.FlipH = false;
+        else
+            NPCSprite.FlipH = true;
+        if (velocity == Vector2.Zero)
+            NPCSprite.Stop(); // change this to idle animation later
+        NPCSprite.Play("walk");
         MoveAndCollide(velocity);
     }
 
