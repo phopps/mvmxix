@@ -8,6 +8,7 @@ public class GroundEnemy : Actor
     {
         name = "Ground Enemy";
         health = 30;
+        speed = 80;
         moveDirections.Remove("idle");
     }
 
@@ -22,21 +23,22 @@ public class GroundEnemy : Actor
     {
         EnemySprite = GetNode<AnimatedSprite>("AnimatedSprite");
         EnemyDelay = GetNode<Timer>("Timer");
-        EnemyLeft = GetNode<CollisionShape2D>("Area2D/LookLeft");
-        EnemyRight = GetNode<CollisionShape2D>("Area2D/LookRight");
+        EnemyLeft = GetNode<CollisionShape2D>("LineOfSight/LookLeft");
+        EnemyRight = GetNode<CollisionShape2D>("LineOfSight/LookRight");
     }
+
     public override void _PhysicsProcess(float delta)
     {
         if (!EnemyDelay.IsStopped())
-            EnemyMovement();
+            EnemyMovement(delta);
     }
 
-    public void EnemyMovement()
+    public void EnemyMovement(float delta)
     {
         if (isAggro)
-            velocity = Position.DirectionTo(playerBody.Position);
+            velocity = Position.DirectionTo(playerBody.Position) * delta * speed;
         else
-            velocity = moveDirections.ElementAt(option).Value;
+            velocity = moveDirections.ElementAt(option).Value * delta * (speed / 2);
 
         if (velocity.x > 0)
         {
@@ -74,5 +76,11 @@ public class GroundEnemy : Actor
     {
         isAggro = false;
         playerBody = null;
+    }
+
+    public void _Damage(Area2D aBody)
+    {
+        // Handle damage given + taken here
+        GD.Print("Collision!");
     }
 }
