@@ -24,7 +24,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 17.5, 16 )
+extents = Vector2( 15.5, 14 )
 
 [node name="FlyingEnemy" type="KinematicBody2D"]
 position = Vector2( 346, 235 )
