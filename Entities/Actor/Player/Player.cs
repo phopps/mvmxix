@@ -5,10 +5,13 @@ using Godot;
 
 public class Player : KinematicBody2D
 {
-    [Export] public float moveSpeed = 100;
+    // Player variables can be adjusted live in the Godot Editor while game is running
+    [Export] public float moveSpeed = 250;
     [Export] public float gravity = 2000;
     public Vector2 velocity = Vector2.Zero;
-    [Export] public float jumpSpeed = 550;
+    [Export] public float jumpSpeed = 650;
+    // public int jumpsRemaining = 2;
+
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -30,11 +33,11 @@ public class Player : KinematicBody2D
         velocity.x = 0;
 
         // set horizontal velocity
-        if (Input.IsActionPressed("moveRight"))
+        if (Input.IsActionPressed("right"))
         {
             velocity.x = velocity.x + moveSpeed;
         }
-        if (Input.IsActionPressed("moveLeft"))
+        if (Input.IsActionPressed("left"))
         {
             velocity.x = velocity.x - moveSpeed;
         }
@@ -48,6 +51,8 @@ public class Player : KinematicBody2D
             // check if player is on the floor
             if (IsOnFloor())
             {
+                // jumpsRemaining--;
+
                 // negative y values are up
                 velocity.y = -jumpSpeed;
             }
