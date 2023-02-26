@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://World/Tiles/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Entities/Actor/Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://World/Background.gdshader" type="Shader" id=4]
 [ext_resource path="res://Scene/GroundEnemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scene/FlyingEnemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 4 )
@@ -29,11 +30,13 @@ tile_data = PoolIntArray( 0, 0, 0, 44, 0, 0, 65536, 0, 0, 65580, 0, 0, 131072, 0
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 130, 456 )
-moveSpeed = 250.0
-jumpSpeed = 650.0
 
 [node name="GroundEnemy" parent="." instance=ExtResource( 5 )]
 position = Vector2( 265, 451 )
 
 [node name="FlyingEnemy" parent="." instance=ExtResource( 6 )]
 position = Vector2( 262, 367 )
+
+[node name="HUD" parent="." instance=ExtResource( 7 )]
+
+[connection signal="Pause" from="." to="HUD" method="onPause"]
