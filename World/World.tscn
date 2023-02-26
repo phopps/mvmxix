@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://World/Tiles/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Entities/Actor/Player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scene/GroundEnemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scene/FlyingEnemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Entities/Actor/Player/Sneak/Sneak.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Entities/Actor/Player/Heavy/Heavy.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 4 )
@@ -38,5 +40,9 @@ position = Vector2( 265, 451 )
 position = Vector2( 262, 367 )
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
+
+[node name="Sneak" parent="." instance=ExtResource( 8 )]
+
+[node name="Heavy" parent="." instance=ExtResource( 9 )]
 
 [connection signal="Pause" from="." to="HUD" method="onPause"]
