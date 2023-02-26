@@ -1,5 +1,10 @@
 # MVMXIX
 
+- [MVMXIX](#mvmxix)
+  - [Style Guide](#style-guide)
+  - [Filetree](#filetree)
+  - [Resources](#resources)
+
 ## Style Guide
 
 - [C# basics](https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_basics.html)
@@ -22,14 +27,38 @@
 
 ```txt
 📦mvmxix
+ ┣ 📂Asset
+ ┃ ┣ 📜toaster-sheet.png
+ ┃ ┣ 📜toaster-sheet.png.import
+ ┃ ┣ 📜toaster-sheet2.png
+ ┃ ┣ 📜toaster-sheet2.png.import
+ ┃ ┣ 📜toaster-sheet3.png
+ ┃ ┗ 📜toaster-sheet3.png.import
  ┣ 📂Entities
  ┃ ┗ 📂Actor
- ┃ ┃ ┣ 📂Enemy
  ┃ ┃ ┗ 📂Player
+ ┃ ┃ ┃ ┣ 📂Heavy
+ ┃ ┃ ┃ ┃ ┣ 📜Heavy.png
+ ┃ ┃ ┃ ┃ ┗ 📜Heavy.png.import
+ ┃ ┃ ┃ ┣ 📂Sneak
+ ┃ ┃ ┃ ┃ ┣ 📜Sneak.png
+ ┃ ┃ ┃ ┃ ┣ 📜Sneak.png.import
+ ┃ ┃ ┃ ┃ ┣ 📜SneakVertical.png
+ ┃ ┃ ┃ ┃ ┗ 📜SneakVertical.png.import
  ┃ ┃ ┃ ┣ 📜Player.cs
+ ┃ ┃ ┃ ┣ 📜Player.gdshader
  ┃ ┃ ┃ ┣ 📜Player.png
  ┃ ┃ ┃ ┣ 📜Player.png.import
  ┃ ┃ ┃ ┗ 📜Player.tscn
+ ┣ 📂Scene
+ ┃ ┣ 📜FlyingEnemy.tscn
+ ┃ ┣ 📜GroundEnemy.tscn
+ ┃ ┗ 📜NPC.tscn
+ ┣ 📂Script
+ ┃ ┣ 📜Actor.cs
+ ┃ ┣ 📜FlyingEnemy.cs
+ ┃ ┣ 📜GroundEnemy.cs
+ ┃ ┗ 📜NPC.cs
  ┣ 📂World
  ┃ ┣ 📂Bootsplash
  ┃ ┃ ┣ 📜bootsplash.png
@@ -50,6 +79,7 @@
  ┃ ┃ ┣ 📜TileTopLeft.png.import
  ┃ ┃ ┣ 📜TileTopRight.png
  ┃ ┃ ┗ 📜TileTopRight.png.import
+ ┃ ┣ 📜Background.gdshader
  ┃ ┣ 📜World.cs
  ┃ ┗ 📜World.tscn
  ┣ 📜.gitignore
@@ -60,3 +90,9 @@
  ┣ 📜project.godot
  ┗ 📜README.md
 ```
+
+## Resources
+
+[Moving Rainbow Gradient - Godot Shaders](https://godotshaders.com/shader/moving-rainbow-gradient/)
+
+[Stars shader - Godot Shaders](https://godotshaders.com/shader/stars-shader/)
