@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Tiny : KinematicBody2D
+public class Tiny : Player
 {
     // Declare member variables here. Examples:
     // private int a = 2;

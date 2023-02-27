@@ -3,7 +3,7 @@ using Godot;
 
 // TODO: player movement, user input
 
-public class Player : KinematicBody2D
+public class Player : Actor
 {
     // Player variables can be adjusted live in the Godot Editor while game is running
     [Export] public float moveSpeed = 250;
