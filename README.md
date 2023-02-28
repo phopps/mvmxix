@@ -36,29 +36,39 @@
  ┃ ┗ 📜toaster-sheet3.png.import
  ┣ 📂Entities
  ┃ ┗ 📂Actor
- ┃ ┃ ┗ 📂Player
+ ┃ ┃ ┣ 📂Player
  ┃ ┃ ┃ ┣ 📂Heavy
+ ┃ ┃ ┃ ┃ ┣ 📜Heavy.cs
  ┃ ┃ ┃ ┃ ┣ 📜Heavy.png
- ┃ ┃ ┃ ┃ ┗ 📜Heavy.png.import
+ ┃ ┃ ┃ ┃ ┣ 📜Heavy.png.import
+ ┃ ┃ ┃ ┃ ┗ 📜Heavy.tscn
  ┃ ┃ ┃ ┣ 📂Sneak
+ ┃ ┃ ┃ ┃ ┣ 📜Sneak.cs
  ┃ ┃ ┃ ┃ ┣ 📜Sneak.png
  ┃ ┃ ┃ ┃ ┣ 📜Sneak.png.import
- ┃ ┃ ┃ ┃ ┣ 📜SneakVertical.png
- ┃ ┃ ┃ ┃ ┗ 📜SneakVertical.png.import
+ ┃ ┃ ┃ ┃ ┗ 📜Sneak.tscn
+ ┃ ┃ ┃ ┣ 📂Tiny
+ ┃ ┃ ┃ ┃ ┣ 📜Tiny.cs
+ ┃ ┃ ┃ ┃ ┣ 📜Tiny.png
+ ┃ ┃ ┃ ┃ ┣ 📜Tiny.png.import
+ ┃ ┃ ┃ ┃ ┗ 📜Tiny.tscn
  ┃ ┃ ┃ ┣ 📜Player.cs
  ┃ ┃ ┃ ┣ 📜Player.gdshader
  ┃ ┃ ┃ ┣ 📜Player.png
  ┃ ┃ ┃ ┣ 📜Player.png.import
  ┃ ┃ ┃ ┗ 📜Player.tscn
+ ┃ ┃ ┗ 📜Actor.cs
  ┣ 📂Scene
  ┃ ┣ 📜FlyingEnemy.tscn
  ┃ ┣ 📜GroundEnemy.tscn
  ┃ ┗ 📜NPC.tscn
  ┣ 📂Script
- ┃ ┣ 📜Actor.cs
  ┃ ┣ 📜FlyingEnemy.cs
  ┃ ┣ 📜GroundEnemy.cs
  ┃ ┗ 📜NPC.cs
+ ┣ 📂UI
+ ┃ ┣ 📜HUD.cs
+ ┃ ┗ 📜HUD.tscn
  ┣ 📂World
  ┃ ┣ 📂Bootsplash
  ┃ ┃ ┣ 📜bootsplash.png
