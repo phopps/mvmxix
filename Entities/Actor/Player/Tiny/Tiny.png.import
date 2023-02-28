@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SneakVertical.png-8d2cee3d7160c02c208e3a4d5b3f46b7.stex"
+path="res://.import/Tiny.png-ced780c63ba3dcf6153144d17dbb9e8f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Actor/Player/Sneak/SneakVertical.png"
-dest_files=[ "res://.import/SneakVertical.png-8d2cee3d7160c02c208e3a4d5b3f46b7.stex" ]
+source_file="res://Entities/Actor/Player/Tiny/Tiny.png"
+dest_files=[ "res://.import/Tiny.png-ced780c63ba3dcf6153144d17dbb9e8f.stex" ]
 
 [params]
 
