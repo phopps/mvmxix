@@ -4,6 +4,12 @@ using System.Collections.Generic;
 
 public class Actor : KinematicBody2D
 {
+
+    public override void _Ready()
+    {
+        GD.Print("(actor ready)");
+    }
+
     public string name;
     public int health;
     public int speed;

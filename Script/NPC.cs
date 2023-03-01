@@ -15,6 +15,7 @@ public class NPC : Actor
     Timer NPCDelay;
     public override void _Ready()
     {
+        GD.Print("(npc ready)");
         NPCSprite = GetNode<AnimatedSprite>("AnimatedSprite");
         NPCDelay = GetNode<Timer>("Timer");
     }

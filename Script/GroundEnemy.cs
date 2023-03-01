@@ -21,6 +21,8 @@ public class GroundEnemy : Actor
 
     public override void _Ready()
     {
+        GD.Print("(ground enemy ready)");
+
         EnemySprite = GetNode<AnimatedSprite>("AnimatedSprite");
         EnemyDelay = GetNode<Timer>("Timer");
         EnemyLeft = GetNode<CollisionShape2D>("LineOfSight/LookLeft");
