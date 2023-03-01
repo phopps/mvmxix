@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bootsplash.png-de698fb80632ac706e9aad3f06a658b5.stex"
+path="res://.import/Sneak.png-8c1573fd62e965b35eb9258d754e2944.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Bootsplash/Bootsplash.png"
-dest_files=[ "res://.import/Bootsplash.png-de698fb80632ac706e9aad3f06a658b5.stex" ]
+source_file="res://Actor/Player/Sneak/Sneak.png"
+dest_files=[ "res://.import/Sneak.png-8c1573fd62e965b35eb9258d754e2944.stex" ]
 
 [params]
 
