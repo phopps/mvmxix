@@ -3,12 +3,11 @@ using Godot;
 
 // TODO: player movement, user input
 
-public class Player : KinematicBody2D
+public class Player : Actor
 {
     // Player variables can be adjusted live in the Godot Editor while game is running
     [Export] public float moveSpeed = 250;
     [Export] public float gravity = 2000;
-    public Vector2 velocity = Vector2.Zero;
     [Export] public float jumpSpeed = 650;
     // public int jumpsRemaining = 2;
 
@@ -16,7 +15,7 @@ public class Player : KinematicBody2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-
+        GD.Print("(player ready)");
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
