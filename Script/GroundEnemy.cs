@@ -81,6 +81,7 @@ public class GroundEnemy : Actor
     public void _Damage(Area2D aBody)
     {
         // Handle damage given + taken here
+        // aBody.health -= 10;
         GD.Print("Collision!");
     }
 }
