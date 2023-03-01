@@ -12,9 +12,9 @@ config_version=4
 
 config/name="mvmxix"
 run/main_scene="res://World/World.tscn"
-boot_splash/image="res://World/Icons/icon.png"
-config/icon="res://World/Icons/icon.png"
-config/windows_native_icon="res://World/Icons/icon.ico"
+boot_splash/image="res://World/Icon/icon.png"
+config/icon="res://World/Icon/icon.png"
+config/windows_native_icon="res://World/Icon/icon.ico"
 
 [display]
 
