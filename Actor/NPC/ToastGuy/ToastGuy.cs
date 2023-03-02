@@ -15,7 +15,8 @@ public class ToastGuy : NPC
     Timer NPCDelay;
     public override void _Ready()
     {
-        GD.Print("(toast guy ready)");
+        GD.Print(this.Name + " is ready.");
+
         NPCSprite = GetNode<AnimatedSprite>("AnimatedSprite");
         NPCDelay = GetNode<Timer>("Timer");
     }
