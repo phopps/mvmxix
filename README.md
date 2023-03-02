@@ -77,6 +77,7 @@
  ┃ ┣ 📂Obstacle
  ┃ ┃ ┣ 📂Crate
  ┃ ┃ ┗ 📂Rock
+ ┃ ┣ 📂Shrine
  ┃ ┗ 📂Switch
  ┃ ┃ ┣ 📂Button
  ┃ ┃ ┗ 📂Lever
@@ -109,6 +110,7 @@
  ┣ 📜.gitignore
  ┣ 📜default_env.tres
  ┣ 📜export_presets.cfg
+ ┣ 📜Game.cs
  ┣ 📜LICENSE
  ┣ 📜mvmxix.csproj
  ┣ 📜mvmxix.sln
