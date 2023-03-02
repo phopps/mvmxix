@@ -7,6 +7,7 @@ using static Game;
 public class World : Node2D
 {
     [Signal] public delegate void Pause();
+    [Signal] public delegate void PlayerSelected();
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

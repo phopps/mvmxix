@@ -4,9 +4,6 @@ using Godot;
 // Global autoloaded singleton for game management
 public class Game : Node
 {
-    // User has selected current player character
-    [Signal] public delegate void PlayerSelected();
-
     public static Game game;
 
     // Selectable player characters
