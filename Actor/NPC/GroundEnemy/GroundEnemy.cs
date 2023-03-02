@@ -21,7 +21,7 @@ public class GroundEnemy : Actor
 
     public override void _Ready()
     {
-        GD.Print("(ground enemy ready)");
+        GD.Print(this.Name + " is ready.");
 
         EnemySprite = GetNode<AnimatedSprite>("AnimatedSprite");
         EnemyDelay = GetNode<Timer>("Timer");
@@ -83,6 +83,6 @@ public class GroundEnemy : Actor
     public void _Damage(Area2D aBody)
     {
         // Handle damage given + taken here
-        GD.Print("Collision!");
+        GD.Print(aBody.Name + " collided with " + this.Name + "!");
     }
 }

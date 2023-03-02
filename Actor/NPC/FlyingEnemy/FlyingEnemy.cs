@@ -12,13 +12,13 @@ public class FlyingEnemy : Actor
         moveDirections.Clear();
         moveDirections = new Dictionary<string, Vector2>()
         {
-            //right
+            // Right
             {"down-right", new Vector2(1, 1)},
-            //down
+            // Down
             {"down-left", new Vector2(-1, 1)},
-            //left
+            // Left
             {"up-left", new Vector2(-1, -1)},
-            //up
+            // Up
             {"up-right", new Vector2(1, -1)}
         };
     }
@@ -29,7 +29,7 @@ public class FlyingEnemy : Actor
 
     public override void _Ready()
     {
-        GD.Print("(flying enemy ready)");
+        GD.Print(this.Name + " is ready.");
 
         FlyingSprite = GetNode<AnimatedSprite>("AnimatedSprite");
         FlyingDelay = GetNode<Timer>("Timer");

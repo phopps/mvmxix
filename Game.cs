@@ -16,7 +16,7 @@ public class Game : Node
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GD.Print("(game ready)");
+        GD.Print(this.Name + " is ready.");
         game = this;
 
         // Load selectable player characters

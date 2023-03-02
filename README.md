@@ -46,6 +46,11 @@
  ┃ ┃ ┃ ┗ 📜ToastGuy.tscn
  ┃ ┃ ┗ 📜NPC.cs
  ┃ ┣ 📂Player
+ ┃ ┃ ┣ 📂Dude
+ ┃ ┃ ┃ ┣ 📜Dude.cs
+ ┃ ┃ ┃ ┣ 📜Dude.png
+ ┃ ┃ ┃ ┣ 📜Dude.png.import
+ ┃ ┃ ┃ ┗ 📜Dude.tscn
  ┃ ┃ ┣ 📂Heavy
  ┃ ┃ ┃ ┣ 📜Heavy.cs
  ┃ ┃ ┃ ┣ 📜Heavy.png
@@ -62,10 +67,7 @@
  ┃ ┃ ┃ ┣ 📜Tiny.png.import
  ┃ ┃ ┃ ┗ 📜Tiny.tscn
  ┃ ┃ ┣ 📜Player.cs
- ┃ ┃ ┣ 📜Player.gdshader
- ┃ ┃ ┣ 📜Player.png
- ┃ ┃ ┣ 📜Player.png.import
- ┃ ┃ ┗ 📜Player.tscn
+ ┃ ┃ ┗ 📜Player.gdshader
  ┃ ┗ 📜Actor.cs
  ┣ 📂Item
  ┃ ┣ 📂Gate

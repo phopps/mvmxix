@@ -12,7 +12,7 @@ public class World : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GD.Print("(world ready)");
+        GD.Print(this.Name + " is ready.");
 
         // Currently selected player character
         game.currentPlayer = "sneak";
@@ -20,6 +20,7 @@ public class World : Node2D
 
     public override void _Input(InputEvent e)
     {
+        // Pause the game and open the pause menu
         if (e.IsActionPressed("pause"))
         {
             GD.Print("pause sent?");
