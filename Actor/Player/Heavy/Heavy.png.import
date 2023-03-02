@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bootsplash.png-de698fb80632ac706e9aad3f06a658b5.stex"
+path="res://.import/Heavy.png-36cfbfa1531b34a350d219c56a32ffb0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Bootsplash/Bootsplash.png"
-dest_files=[ "res://.import/Bootsplash.png-de698fb80632ac706e9aad3f06a658b5.stex" ]
+source_file="res://Actor/Player/Heavy/Heavy.png"
+dest_files=[ "res://.import/Heavy.png-36cfbfa1531b34a350d219c56a32ffb0.stex" ]
 
 [params]
 
