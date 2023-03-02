@@ -11,11 +11,15 @@ public class Player : Actor
     [Export] public float jumpSpeed = 650;
     // public int jumpsRemaining = 2;
 
+    // Player switching
+    public bool isActivePlayer = false;
+
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         GD.Print("(player ready)");
+
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.

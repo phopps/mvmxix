@@ -1,5 +1,5 @@
-using Godot;
 using System;
+using Godot;
 
 public class Sneak : Player
 {
@@ -13,9 +13,9 @@ public class Sneak : Player
         GD.Print("(sneak ready)");
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//
-//  }
+    //  // Called every frame. 'delta' is the elapsed time since the previous frame.
+    //  public override void _Process(float delta)
+    //  {
+    //
+    //  }
 }

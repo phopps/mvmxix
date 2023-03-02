@@ -1,5 +1,5 @@
-using Godot;
 using System;
+using Godot;
 
 public class Tiny : Player
 {
@@ -13,9 +13,9 @@ public class Tiny : Player
         GD.Print("(tiny ready)");
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//
-//  }
+    //  // Called every frame. 'delta' is the elapsed time since the previous frame.
+    //  public override void _Process(float delta)
+    //  {
+    //
+    //  }
 }
