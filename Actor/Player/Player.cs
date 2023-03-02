@@ -19,13 +19,6 @@ public class Player : Actor
     public override void _Ready()
     {
         GD.Print("(player ready)");
-
-    }
-
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(float delta)
-    {
-
     }
 
     // Called 60 times per second, independent of framerate.

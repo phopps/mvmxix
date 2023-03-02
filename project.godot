@@ -16,6 +16,10 @@ boot_splash/image="res://World/Icon/icon.png"
 config/icon="res://World/Icon/icon.png"
 config/windows_native_icon="res://World/Icon/icon.ico"
 
+[autoload]
+
+Game="*res://Game.cs"
+
 [display]
 
 window/size/width=720

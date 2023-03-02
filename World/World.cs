@@ -1,33 +1,21 @@
 using System;
 using Godot;
-
+using static Game;
 
 // TODO: fullscreen, pause, exit
 
 public class World : Node2D
 {
-    [Signal]
-    public delegate void Pause();
-
-    public string activePlayer = "none";
+    [Signal] public delegate void Pause();
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         GD.Print("(world ready)");
 
-        // Get selectable player types
-        Player heavy = GetNode<Player>("Heavy");
-        Player sneak = GetNode<Player>("Sneak");
-        Player tiny = GetNode<Player>("Tiny");
+        // Currently selected player character
+        game.currentPlayer = "sneak";
     }
-
-    // public override void _Process(float delta) {
-    //   if (Input.IsActionPressed("pause")) {
-    //     GD.Print("pause sent?");
-    //     EmitSignal("Pause");
-    //   }
-    // }
 
     public override void _Input(InputEvent e)
     {
@@ -37,25 +25,28 @@ public class World : Node2D
             EmitSignal("Pause");
         }
 
-        // select heavy as player character
+        // Select player character Heavy
         if (e.IsActionPressed("selectHeavy"))
         {
-            GD.Print("Heavy has been selected");
-            activePlayer = "heavy";
+            GD.Print("Heavy has been selected.");
+            game.currentPlayer = "heavy";
+            EmitSignal("PlayerSelected");
         }
 
-        // select sneak as player character
+        // Select player character Sneak
         if (e.IsActionPressed("selectSneak"))
         {
-            GD.Print("Sneak has been selected");
-            activePlayer = "sneak";
+            GD.Print("Sneak has been selected.");
+            game.currentPlayer = "sneak";
+            EmitSignal("PlayerSelected");
         }
 
-        // select tiny as player character
+        // Select player character Tiny
         if (e.IsActionPressed("selectTiny"))
         {
-            GD.Print("Tiny has been selected");
-            activePlayer = "tiny";
+            GD.Print("Tiny has been selected.");
+            game.currentPlayer = "tiny";
+            EmitSignal("PlayerSelected");
         }
     }
 }
