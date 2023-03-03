@@ -35,6 +35,11 @@
 📦mvmxix
  ┣ 📂Actor
  ┃ ┣ 📂NPC
+ ┃ ┃ ┣ 📂Dude
+ ┃ ┃ ┃ ┣ 📜Dude.cs
+ ┃ ┃ ┃ ┣ 📜Dude.png
+ ┃ ┃ ┃ ┣ 📜Dude.png.import
+ ┃ ┃ ┃ ┗ 📜Dude.tscn
  ┃ ┃ ┣ 📂FlyingEnemy
  ┃ ┃ ┃ ┣ 📜FlyingEnemy.cs
  ┃ ┃ ┃ ┣ 📜FlyingEnemy.png
@@ -52,11 +57,6 @@
  ┃ ┃ ┃ ┗ 📜ToastGuy.tscn
  ┃ ┃ ┗ 📜NPC.cs
  ┃ ┣ 📂Player
- ┃ ┃ ┣ 📂Dude
- ┃ ┃ ┃ ┣ 📜Dude.cs
- ┃ ┃ ┃ ┣ 📜Dude.png
- ┃ ┃ ┃ ┣ 📜Dude.png.import
- ┃ ┃ ┃ ┗ 📜Dude.tscn
  ┃ ┃ ┣ 📂Heavy
  ┃ ┃ ┃ ┣ 📜Heavy.cs
  ┃ ┃ ┃ ┣ 📜Heavy.png
