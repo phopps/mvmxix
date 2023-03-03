@@ -24,7 +24,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 12.5, 1 )
+extents = Vector2( 11, 1 )
 
 [sub_resource type="RayShape2D" id=6]
 length = 161.0
@@ -41,10 +41,9 @@ script = ExtResource( 2 )
 frames = SubResource( 4 )
 animation = "walk"
 frame = 1
-centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 17.5, 27 )
+position = Vector2( 3, 13 )
 shape = SubResource( 5 )
 one_way_collision = true
 
@@ -57,12 +56,12 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="LookRight" type="CollisionShape2D" parent="LineOfSight"]
-position = Vector2( 19, 20 )
+position = Vector2( -1.15262e-07, 7.94453e-08 )
 rotation = -1.5708
 shape = SubResource( 6 )
 
 [node name="LookLeft" type="CollisionShape2D" parent="LineOfSight"]
-position = Vector2( 19, 20 )
+position = Vector2( -1.15262e-07, 7.94453e-08 )
 rotation = 1.5708
 shape = SubResource( 6 )
 disabled = true
@@ -72,7 +71,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="EnemyHitBox" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 16, 19.5 )
+position = Vector2( 0, 3 )
 shape = SubResource( 7 )
 
 [connection signal="timeout" from="Timer" to="." method="_OnTimerTimeout"]

@@ -40,10 +40,9 @@ script = ExtResource( 2 )
 material = SubResource( 6 )
 frames = SubResource( 4 )
 animation = "walk"
-centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 19, 23 )
+position = Vector2( 3, 7 )
 shape = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
