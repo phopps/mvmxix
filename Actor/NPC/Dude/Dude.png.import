@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dude.png-581d995e45627043eba20c87d9d088be.stex"
+path="res://.import/Dude.png-8bc1a254f1f74950501fa8767fb8d693.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actor/Player/Dude/Dude.png"
-dest_files=[ "res://.import/Dude.png-581d995e45627043eba20c87d9d088be.stex" ]
+source_file="res://Actor/NPC/Dude/Dude.png"
+dest_files=[ "res://.import/Dude.png-8bc1a254f1f74950501fa8767fb8d693.stex" ]
 
 [params]
 
