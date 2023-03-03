@@ -103,6 +103,31 @@ selectTiny={
  ]
 }
 
+[layer_names]
+
+2d_render/layer_1="environment"
+2d_render/layer_2="sneak"
+2d_render/layer_3="heavy"
+2d_render/layer_4="tiny"
+2d_render/layer_5="enemy"
+2d_render/layer_6="ally"
+2d_render/layer_7="key"
+2d_render/layer_8="switch"
+2d_render/layer_9="gate"
+2d_render/layer_10="obstacle"
+2d_render/layer_11="shrine"
+2d_physics/layer_1="environment"
+2d_physics/layer_2="sneak"
+2d_physics/layer_3="heavy"
+2d_physics/layer_4="tiny"
+2d_physics/layer_5="enemy"
+2d_physics/layer_6="ally"
+2d_physics/layer_7="key"
+2d_physics/layer_8="switch"
+2d_physics/layer_9="gate"
+2d_physics/layer_10="obstacle"
+2d_physics/layer_11="shrine"
+
 [mono]
 
 project/assembly_name="mvmxix"

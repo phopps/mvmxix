@@ -2,8 +2,8 @@
 
 - [MVMXIX](#mvmxix)
   - [Style Guide](#style-guide)
-  - [Filetree](#filetree)
   - [Resources](#resources)
+  - [Filetree](#filetree)
 
 ## Style Guide
 
@@ -22,6 +22,14 @@
   - `[Export(PropertyHint.File, "*.png,*.jpg")] private string _icon;`
   - Note: see [C# exports](https://docs.godotengine.org/en/latest/tutorials/scripting/c_sharp/c_sharp_exports.html) in latest unstable version for more details, similar to stable version
 - Use modifiers in this order: `public` / `protected` / `private` / `internal` / `virtual` / `override` / `abstract` / `new` / `static` / `readonly`
+
+## Resources
+
+
+
+[Moving Rainbow Gradient - Godot Shaders](https://godotshaders.com/shader/moving-rainbow-gradient/)
+
+[Stars shader - Godot Shaders](https://godotshaders.com/shader/stars-shader/)
 
 ## Filetree
 
@@ -80,6 +88,10 @@
  ┃ ┃ ┣ 📂Crate
  ┃ ┃ ┗ 📂Rock
  ┃ ┣ 📂Shrine
+ ┃ ┃ ┣ 📜Shrine.cs
+ ┃ ┃ ┣ 📜Shrine.png
+ ┃ ┃ ┣ 📜Shrine.png.import
+ ┃ ┃ ┗ 📜Shrine.tscn
  ┃ ┗ 📂Switch
  ┃ ┃ ┣ 📂Button
  ┃ ┃ ┗ 📂Lever
@@ -119,9 +131,3 @@
  ┣ 📜project.godot
  ┗ 📜README.md
 ```
-
-## Resources
-
-[Moving Rainbow Gradient - Godot Shaders](https://godotshaders.com/shader/moving-rainbow-gradient/)
-
-[Stars shader - Godot Shaders](https://godotshaders.com/shader/stars-shader/)

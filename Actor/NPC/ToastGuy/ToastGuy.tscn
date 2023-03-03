@@ -30,12 +30,12 @@ extents = Vector2( 10, 6 )
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -12 )
 frames = SubResource( 4 )
 animation = "walk"
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 3, -6 )
+position = Vector2( 19, 23 )
 shape = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]

@@ -27,15 +27,15 @@ animations = [ {
 extents = Vector2( 15.5, 14 )
 
 [node name="FlyingEnemy" type="KinematicBody2D"]
-position = Vector2( 346, 235 )
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
 animation = "walk"
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, 0 )
+position = Vector2( 16.5, 16 )
 shape = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
