@@ -20,10 +20,6 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 2 )
 texture = ExtResource( 1 )
-centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 8, 8 )
 shape = SubResource( 1 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
