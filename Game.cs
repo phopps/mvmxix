@@ -1,4 +1,3 @@
-using System;
 using Godot;
 
 // Global autoloaded singleton for game management
