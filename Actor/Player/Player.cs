@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.CompilerServices;
 using Godot;
 
 // TODO: player movement, user input
@@ -14,11 +16,16 @@ public class Player : Actor
     // Player switching
     public bool isActivePlayer = false;
 
+    private Sprite _sprite;
+    private string _name;
+
+
+
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready.");
+        GD.Print(this.Name + " is ready. (Player.cs)");
     }
 
     // Called 60 times per second, independent of framerate.
@@ -56,5 +63,28 @@ public class Player : Actor
 
         // Move player ('MoveAndSlide' automatically uses 'delta' in calculations)
         velocity = MoveAndSlide(velocity, Vector2.Up);
+
+        FlipSprite();
+    }
+
+    public void FlipSprite()
+    {
+        _sprite = GetNode<Sprite>("Sprite");
+        // Flip sprite to match direction player is moving
+        if (velocity.x > 0)
+        {
+            // Player is moving right
+            _sprite.FlipH = false;
+        }
+        else if (velocity.x < 0)
+        {
+            // Player is moving left
+            _sprite.FlipH = true;
+        }
+        else
+        {
+            // Player is not moving
+            // Play idle animation here if it doesn't effect physics or controls
+        }
     }
 }

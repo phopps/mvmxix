@@ -10,13 +10,15 @@ public class Game : Node
     public PackedScene heavy;
     public PackedScene sneak;
     public PackedScene tiny;
-    public string currentPlayer = "none";
+
+    // Start with sneak as the default character
+    public string currentPlayer = "Sneak";
     public string previousPlayer = "none";
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready.");
+        GD.Print(this.Name + " is ready. (Game.cs)");
         game = this;
 
         // Load selectable player characters

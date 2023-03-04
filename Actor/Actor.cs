@@ -17,7 +17,7 @@ public class Actor : KinematicBody2D
 
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready.");
+        GD.Print(this.Name + " is ready. (Actor.cs)");
     }
 
 }
