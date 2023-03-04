@@ -6,7 +6,7 @@ public class Actor : KinematicBody2D
 {
     public string name;
     public int health;
-    public int speed;
+    public int moveSpeed;
     public Vector2 velocity = Vector2.Zero;
     public Dictionary<string, Vector2> moveDirections = new Dictionary<string, Vector2>()
     {
@@ -17,7 +17,7 @@ public class Actor : KinematicBody2D
 
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready.");
+        GD.Print(this.Name + " is ready. (Actor.cs)");
     }
 
 }
