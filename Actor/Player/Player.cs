@@ -3,24 +3,18 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using Godot;
 
-// TODO: player movement, user input
-
 public class Player : Actor
 {
     // Player variables can be adjusted live in the Godot Editor while game is running
-    [Export] public float moveSpeed = 250;
+    [Export] public new float moveSpeed = 250;
     [Export] public float gravity = 2000;
     [Export] public float jumpSpeed = 650;
-    // public int jumpsRemaining = 2;
-
-    // Player switching
-    public bool isActivePlayer = false;
+    [Export] public int jumpsUsed = 0;
+    [Export] public int jumpsRemaining = 2;
+    [Export] public bool isActivePlayer = false;
 
     private Sprite _sprite;
     private string _name;
-
-
-
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

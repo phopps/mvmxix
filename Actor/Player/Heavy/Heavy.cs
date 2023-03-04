@@ -7,5 +7,9 @@ public class Heavy : Player
     public override void _Ready()
     {
         GD.Print(this.Name + " is ready. (Heavy.cs)");
+
+        // Update inherited player variables
+        this.moveSpeed -= 100;
+        this.jumpSpeed -= 100;
     }
 }

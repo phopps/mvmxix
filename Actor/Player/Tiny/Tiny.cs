@@ -7,5 +7,10 @@ public class Tiny : Player
     public override void _Ready()
     {
         GD.Print(this.Name + " is ready. (Tiny.cs)");
+
+        // Update inherited player variables
+        this.moveSpeed += 100;
+        this.jumpSpeed += 100;
+        this.jumpsRemaining += 1;
     }
 }
