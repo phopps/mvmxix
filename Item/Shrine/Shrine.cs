@@ -1,10 +1,10 @@
 using Godot;
 
-public class NPC : Actor
+public class Shrine : Area2D
 {
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready. (NPC.cs)");
+        GD.Print(this.Name + " is ready. (Shrine.cs)");
     }
 }

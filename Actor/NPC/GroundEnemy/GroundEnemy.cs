@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Godot;
 
@@ -8,7 +7,7 @@ public class GroundEnemy : Actor
     {
         name = "Ground Enemy";
         health = 30;
-        speed = 80;
+        moveSpeed = 80;
         moveDirections.Remove("idle");
     }
 
@@ -21,7 +20,7 @@ public class GroundEnemy : Actor
 
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready.");
+        GD.Print(this.Name + " is ready. (GroundEnemy.cs)");
 
         EnemySprite = GetNode<AnimatedSprite>("AnimatedSprite");
         EnemyDelay = GetNode<Timer>("Timer");
@@ -38,9 +37,9 @@ public class GroundEnemy : Actor
     public void EnemyMovement(float delta)
     {
         if (isAggro)
-            velocity = Position.DirectionTo(playerBody.Position) * delta * speed;
+            velocity = Position.DirectionTo(playerBody.Position) * delta * moveSpeed;
         else
-            velocity = moveDirections.ElementAt(option).Value * delta * (speed / 2);
+            velocity = moveDirections.ElementAt(option).Value * delta * (moveSpeed / 2);
 
         if (velocity.x > 0)
         {

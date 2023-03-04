@@ -1,11 +1,9 @@
-using System;
 using Godot;
 using static Game;
 
-// TODO: fullscreen, pause, exit
-
 public class World : Node2D
 {
+    // Signals emitted from this script
     [Signal] public delegate void Pause();
     [Signal] public delegate void PlayerSelected();
 
@@ -14,7 +12,7 @@ public class World : Node2D
     {
         GD.Print(this.Name + " is ready.");
 
-        // Currently selected player character
+        // Set starting player character to sneak
         game.currentPlayer = "sneak";
     }
 
