@@ -11,6 +11,6 @@ public class Tiny : Player
         // Update inherited player variables
         this.moveSpeed += 100;
         this.jumpSpeed += 100;
-        this.jumpsRemaining += 1;
+        this.jumpsRemaining++;
     }
 }

@@ -29,7 +29,7 @@ public class FlyingEnemy : Actor
 
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready.");
+        GD.Print(this.Name + " is ready. (FlyingEnemy.cs)");
 
         FlyingSprite = GetNode<AnimatedSprite>("AnimatedSprite");
         FlyingDelay = GetNode<Timer>("Timer");
