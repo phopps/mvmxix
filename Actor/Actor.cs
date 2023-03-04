@@ -1,12 +1,11 @@
-using System;
 using System.Collections.Generic;
 using Godot;
 
 public class Actor : KinematicBody2D
 {
     public string name;
-    public int health;
-    public int moveSpeed;
+    [Export] public int health;
+    [Export] public float moveSpeed;
     public Vector2 velocity = Vector2.Zero;
     public Dictionary<string, Vector2> moveDirections = new Dictionary<string, Vector2>()
     {

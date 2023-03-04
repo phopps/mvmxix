@@ -11,8 +11,8 @@ public class Game : Node
     public PackedScene sneak;
     public PackedScene tiny;
 
-    // Start with sneak as the default character
-    public string currentPlayer = "Sneak";
+    // Currently and previously selected player characters
+    public string currentPlayer = "none";
     public string previousPlayer = "none";
 
     // Called when the node enters the scene tree for the first time.
