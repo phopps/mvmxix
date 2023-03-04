@@ -1,4 +1,3 @@
-using System;
 using Godot;
 
 public class Heavy : Player
@@ -9,7 +8,24 @@ public class Heavy : Player
         GD.Print(this.Name + " is ready. (Heavy.cs)");
 
         // Update inherited player variables
-        this.moveSpeed -= 100;
-        this.jumpSpeed -= 100;
+        this.gravity = 4000;
+        this.moveSpeed = 100;
+        this.jumpSpeed = 300;
+    }
+
+    public override void AdjustMovementSpeeds()
+    {
+        if (!this.IsOnFloor())
+        {
+            // Air movement
+            this.moveSpeed = 50;
+            this.jumpSpeed = 300;
+        }
+        else
+        {
+            // Floor movement
+            this.moveSpeed = 100;
+            this.jumpSpeed = 400;
+        }
     }
 }

@@ -1,14 +1,10 @@
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.CompilerServices;
 using Godot;
 
 public class Player : Actor
 {
     // Player variables can be adjusted live in the Godot Editor while game is running
-    [Export] public new float moveSpeed = 250;
-    [Export] public float gravity = 2000;
-    [Export] public float jumpSpeed = 650;
+    [Export] public float gravity = 0;
+    [Export] public float jumpSpeed = 0;
     [Export] public int jumpsUsed = 0;
     [Export] public int jumpsRemaining = 2;
     [Export] public bool isActivePlayer = false;
@@ -29,15 +25,11 @@ public class Player : Actor
         // Reset horizontal velocity
         velocity.x = 0;
 
-        // Set horizontal velocity
-        if (Input.IsActionPressed("right"))
-        {
-            velocity.x = velocity.x + moveSpeed;
-        }
-        if (Input.IsActionPressed("left"))
-        {
-            velocity.x = velocity.x - moveSpeed;
-        }
+        // Adjust movement for different characters
+        AdjustMovementSpeeds();
+
+        // Get user input for horizontal movement
+        GetHorizontalInput();
 
         // Apply gravity
         velocity.y = velocity.y + gravity * delta;
@@ -80,12 +72,39 @@ public class Player : Actor
         }
     }
 
-    // Jump and air jump abilities
-    public void Jump()
+    public virtual void AdjustMovementSpeeds()
     {
-        justJumped = true;
+        // Set horizontal velocity
+        if (Input.IsActionPressed("right"))
+        {
+            velocity.x += moveSpeed;
+        }
+        if (Input.IsActionPressed("left"))
+        {
+            velocity.x -= moveSpeed;
+        }
+    }
+
+    public void GetHorizontalInput()
+    {
+        // Set horizontal velocity
+        if (Input.IsActionPressed("right"))
+        {
+            this.velocity.x += this.moveSpeed;
+        }
+        if (Input.IsActionPressed("left"))
+        {
+            this.velocity.x -= this.moveSpeed;
+        }
+    }
+
+    // Jump and air jump abilities
+    public virtual void Jump()
+    {
+        // Increment jump counters
         jumpsUsed++;
         jumpsRemaining--;
+        justJumped = true;
 
         // Negative y values are up
         velocity.y = -jumpSpeed;
