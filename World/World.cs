@@ -27,27 +27,55 @@ public class World : Node2D
             EmitSignal("Pause");
         }
 
-        // Select player character Heavy
-        if (e.IsActionPressed("selectHeavy"))
-        {
-            GD.Print("Heavy has been selected.");
-            game.currentPlayer = "heavy";
-            EmitSignal("PlayerSelected");
-        }
-
         // Select player character Sneak
         if (e.IsActionPressed("selectSneak"))
         {
-            GD.Print("Sneak has been selected.");
+            GD.Print("Sneak has been selected. (World.cs)");
+            // Remove previous character
+            // If selected character already exists in the world node
+            // Then refill health, update position, etc.
+            // Else create an instance of the character
+            game.InstanceSneak(new Vector2(472, -24));
             game.currentPlayer = "sneak";
+            EmitSignal("PlayerSelected");
+        }
+
+        // Select player character Heavy
+        if (e.IsActionPressed("selectHeavy"))
+        {
+            GD.Print("Heavy has been selected. (World.cs)");
+            // Remove previous character
+            // If selected character already exists in the world node
+            // Then refill health, update position, etc.
+            // Else create an instance of the character
+            game.InstanceHeavy(new Vector2(560, -32));
+            game.currentPlayer = "heavy";
             EmitSignal("PlayerSelected");
         }
 
         // Select player character Tiny
         if (e.IsActionPressed("selectTiny"))
         {
-            GD.Print("Tiny has been selected.");
+            GD.Print("Tiny has been selected. (World.cs)");
+            // Remove previous character
+            // If selected character already exists in the world node
+            // Then refill health, update position, etc.
+            // Else create an instance of the character
+            game.InstanceTiny(new Vector2(632, -24));
             game.currentPlayer = "tiny";
+            EmitSignal("PlayerSelected");
+        }
+
+        // Select player character Dude
+        if (e.IsActionPressed("selectDude"))
+        {
+            GD.Print("Dude has been selected. (World.cs)");
+            // Remove previous character
+            // If selected character already exists in the world node
+            // Then refill health, update position, etc.
+            // Else create an instance of the character
+            game.InstanceDude(new Vector2(232, 24));
+            game.currentPlayer = "dude";
             EmitSignal("PlayerSelected");
         }
     }
