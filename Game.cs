@@ -1,5 +1,6 @@
-using System;
 using Godot;
+
+// TODO: Global constants, methods, resources, etc.
 
 // Global autoloaded singleton for game management
 public class Game : Node
@@ -10,13 +11,15 @@ public class Game : Node
     public PackedScene heavy;
     public PackedScene sneak;
     public PackedScene tiny;
+
+    // Currently and previously selected player characters
     public string currentPlayer = "none";
     public string previousPlayer = "none";
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready.");
+        GD.Print(this.Name + " is ready. (Game.cs)");
         game = this;
 
         // Load selectable player characters

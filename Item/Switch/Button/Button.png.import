@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dude.png-581d995e45627043eba20c87d9d088be.stex"
+path="res://.import/Button.png-918cae9cfbb26c7fe63448ee9230682d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actor/Player/Dude/Dude.png"
-dest_files=[ "res://.import/Dude.png-581d995e45627043eba20c87d9d088be.stex" ]
+source_file="res://Item/Switch/Button/Button.png"
+dest_files=[ "res://.import/Button.png-918cae9cfbb26c7fe63448ee9230682d.stex" ]
 
 [params]
 

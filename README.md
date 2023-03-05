@@ -35,6 +35,11 @@
 📦mvmxix
  ┣ 📂Actor
  ┃ ┣ 📂NPC
+ ┃ ┃ ┣ 📂Dude
+ ┃ ┃ ┃ ┣ 📜Dude.cs
+ ┃ ┃ ┃ ┣ 📜Dude.png
+ ┃ ┃ ┃ ┣ 📜Dude.png.import
+ ┃ ┃ ┃ ┗ 📜Dude.tscn
  ┃ ┃ ┣ 📂FlyingEnemy
  ┃ ┃ ┃ ┣ 📜FlyingEnemy.cs
  ┃ ┃ ┃ ┣ 📜FlyingEnemy.png
@@ -52,11 +57,6 @@
  ┃ ┃ ┃ ┗ 📜ToastGuy.tscn
  ┃ ┃ ┗ 📜NPC.cs
  ┃ ┣ 📂Player
- ┃ ┃ ┣ 📂Dude
- ┃ ┃ ┃ ┣ 📜Dude.cs
- ┃ ┃ ┃ ┣ 📜Dude.png
- ┃ ┃ ┃ ┣ 📜Dude.png.import
- ┃ ┃ ┃ ┗ 📜Dude.tscn
  ┃ ┃ ┣ 📂Heavy
  ┃ ┃ ┃ ┣ 📜Heavy.cs
  ┃ ┃ ┃ ┣ 📜Heavy.png
@@ -78,13 +78,24 @@
  ┣ 📂Item
  ┃ ┣ 📂Gate
  ┃ ┃ ┣ 📂Bridge
- ┃ ┃ ┗ 📂Door
+ ┃ ┃ ┣ 📂Door
+ ┃ ┃ ┗ 📜Gate.cs
  ┃ ┣ 📂Key
  ┃ ┃ ┣ 📂KeyCard
- ┃ ┃ ┗ 📂SkeletonKey
+ ┃ ┃ ┃ ┣ 📜KeyCard.png
+ ┃ ┃ ┃ ┗ 📜KeyCard.png.import
+ ┃ ┃ ┣ 📂SkeletonKey
+ ┃ ┃ ┃ ┣ 📜SkeletonKey.png
+ ┃ ┃ ┃ ┗ 📜SkeletonKey.png.import
+ ┃ ┃ ┗ 📜Key.cs
  ┃ ┣ 📂Obstacle
  ┃ ┃ ┣ 📂Crate
- ┃ ┃ ┗ 📂Rock
+ ┃ ┃ ┃ ┣ 📜Crate.png
+ ┃ ┃ ┃ ┗ 📜Crate.png.import
+ ┃ ┃ ┣ 📂Rock
+ ┃ ┃ ┃ ┣ 📜Rock.png
+ ┃ ┃ ┃ ┗ 📜Rock.png.import
+ ┃ ┃ ┗ 📜Obstacle.cs
  ┃ ┣ 📂Shrine
  ┃ ┃ ┣ 📜Shrine.cs
  ┃ ┃ ┣ 📜Shrine.png
@@ -92,7 +103,12 @@
  ┃ ┃ ┗ 📜Shrine.tscn
  ┃ ┗ 📂Switch
  ┃ ┃ ┣ 📂Button
- ┃ ┃ ┗ 📂Lever
+ ┃ ┃ ┃ ┣ 📜Button.png
+ ┃ ┃ ┃ ┗ 📜Button.png.import
+ ┃ ┃ ┣ 📂Lever
+ ┃ ┃ ┃ ┣ 📜Lever.png
+ ┃ ┃ ┃ ┗ 📜Lever.png.import
+ ┃ ┃ ┗ 📜Switch.cs
  ┣ 📂UI
  ┃ ┣ 📜HUD.cs
  ┃ ┗ 📜HUD.tscn
