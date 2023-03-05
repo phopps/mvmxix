@@ -30,4 +30,11 @@ public class Sneak : Player
             this.jumpSpeed = 450;
         }
     }
+
+    // Move sneak using move and slide with snap
+    public override void Move()
+    {
+        // Automatically uses delta in calculations, need to include snap vector
+        velocity = MoveAndSlideWithSnap(velocity, Vector2.Up);
+    }
 }
