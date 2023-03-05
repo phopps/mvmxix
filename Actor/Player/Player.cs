@@ -1,5 +1,7 @@
 using Godot;
 
+// TODO: Air jump (double jump), wall jump, coyote time, jump buffer, jump cutoff, attack, special, interact, damage
+
 public class Player : Actor
 {
     // Player variables can be adjusted live in the Godot Editor while game is running
@@ -47,6 +49,7 @@ public class Player : Actor
         // Move player ('MoveAndSlide' automatically uses 'delta' in calculations)
         velocity = MoveAndSlide(velocity, Vector2.Up);
 
+        // Flip sprite to match direction player is moving
         FlipSprite();
     }
 
@@ -72,19 +75,13 @@ public class Player : Actor
         }
     }
 
+    // Adjust physics to match each unique character movement style
     public virtual void AdjustMovementSpeeds()
     {
-        // Set horizontal velocity
-        if (Input.IsActionPressed("right"))
-        {
-            velocity.x += moveSpeed;
-        }
-        if (Input.IsActionPressed("left"))
-        {
-            velocity.x -= moveSpeed;
-        }
+
     }
 
+    // Get user input for left and right player movement
     public void GetHorizontalInput()
     {
         // Set horizontal velocity
@@ -108,5 +105,28 @@ public class Player : Actor
 
         // Negative y values are up
         velocity.y = -jumpSpeed;
+    }
+
+    // Attack enemies within range, but not obstacles
+    public virtual void Attack()
+    {
+        // Should be same (remove virtual) or similar for all characters
+        // Adjust attack strength per character
+        // Shared variables, timers, signals, etc.
+    }
+
+    // Unique special ability for each character
+    public virtual void Special()
+    {
+        // Override this method for each character
+        // Heavy does Thump, Sneak does Dash, Tiny does Launch (superjump)
+        // Shared variables, timers, signals, etc.
+    }
+
+    // Player can interact with items on map such as switches and gates
+    public void Interact()
+    {
+        // Should be same for all characters, no override needed
+        // Shared variables, timers, signals, etc.
     }
 }

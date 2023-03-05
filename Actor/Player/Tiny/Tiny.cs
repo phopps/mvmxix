@@ -1,5 +1,7 @@
 using Godot;
 
+// TODO: Extra air jump, attack strength, special Launch (superjump), wall jumping
+
 public class Tiny : Player
 {
     // Called when the node enters the scene tree for the first time.

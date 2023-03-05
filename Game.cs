@@ -1,5 +1,6 @@
-using System;
 using Godot;
+
+// TODO: Global constants, methods, resources, etc.
 
 // Global autoloaded singleton for game management
 public class Game : Node

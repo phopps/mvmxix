@@ -1,6 +1,8 @@
 using Godot;
 using static Game;
 
+// TODO: Player character switching
+
 public class World : Node2D
 {
     // Signals emitted from this script
