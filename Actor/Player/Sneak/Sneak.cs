@@ -1,5 +1,7 @@
 using Godot;
 
+// TODO: Switch to MoveAndSlideWithSnap for movement, wall and ceiling crawling, collision detection raycast, rotate to match surface on collision, attack strength (can be default), special Dash, no need for wall jumping (disable if needed)
+
 public class Sneak : Player
 {
     // Called when the node enters the scene tree for the first time.

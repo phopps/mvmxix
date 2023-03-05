@@ -17,6 +17,8 @@ public class HUD : CanvasLayer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        GD.Print(this.Name + " is ready. (HUD.cs)");
+
         anim = GetNode<AnimationPlayer>("AnimationPlayer");
         anim.PlayBackwards("pause");
         menuOpt1 = GetNode<Label>("MenuBox/ColorRect/MenuOpt1");

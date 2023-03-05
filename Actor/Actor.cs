@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using Godot;
 
+// TODO: move moveDirections to NPC or global script
+
 public class Actor : KinematicBody2D
 {
     public string name;
