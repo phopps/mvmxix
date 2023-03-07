@@ -11,9 +11,9 @@ public class Sneak : Player
         GD.Print(Name + " is ready. (Sneak.cs)");
 
         // Update inherited player variables
-        gravity = SneakGravity;
-        moveSpeed = SneakMoveSpeed;
-        jumpSpeed = SneakJumpSpeed;
+        gravity = game.sneakGravity;
+        moveSpeed = game.sneakMoveSpeed;
+        jumpSpeed = game.sneakJumpSpeed;
     }
 
     public override void AdjustMovementSpeeds()
@@ -21,14 +21,14 @@ public class Sneak : Player
         if (!IsOnFloor())
         {
             // Air movement
-            moveSpeed = SneakAirMoveSpeed;
-            jumpSpeed = SneakAirJumpSpeed;
+            moveSpeed = game.sneakAirMoveSpeed;
+            jumpSpeed = game.sneakAirJumpSpeed;
         }
         else
         {
             // Floor movement
-            moveSpeed = SneakMoveSpeed;
-            jumpSpeed = SneakJumpSpeed;
+            moveSpeed = game.sneakMoveSpeed;
+            jumpSpeed = game.sneakJumpSpeed;
         }
     }
 
