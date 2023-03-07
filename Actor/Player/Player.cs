@@ -13,12 +13,12 @@ public class Player : Actor
     [Export] public bool justJumped = false;
 
     private Sprite _sprite;
-    private string _name;
+    // private string _name;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready. (Player.cs)");
+        GD.Print(Name + " is ready. (Player.cs)");
     }
 
     // Called 60 times per second independent of framerate, delta is time since physics process called.

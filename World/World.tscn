@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://World/Level/Sandbox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Item/Gate/Bridge/Bridge.tscn" type="PackedScene" id=2]
@@ -7,9 +7,6 @@
 [ext_resource path="res://Actor/NPC/GroundEnemy/GroundEnemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actor/NPC/FlyingEnemy/FlyingEnemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Actor/Player/Sneak/Sneak.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Actor/Player/Heavy/Heavy.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Actor/Player/Tiny/Tiny.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Item/Gate/Door/Door.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Item/Shrine/Shrine.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Actor/NPC/ToastGuy/ToastGuy.tscn" type="PackedScene" id=17]
@@ -38,23 +35,9 @@ __meta__ = {
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
 
-[node name="Sneak" parent="." instance=ExtResource( 8 )]
-position = Vector2( 56, 200 )
-collision_layer = 2
-collision_mask = 7
-
-[node name="Heavy" parent="." instance=ExtResource( 9 )]
-position = Vector2( 256, 112 )
-collision_layer = 4
-collision_mask = 7
-
-[node name="Tiny" parent="." instance=ExtResource( 10 )]
-position = Vector2( 128, 280 )
-collision_layer = 8
-collision_mask = 7
-
 [node name="Shrine" parent="." instance=ExtResource( 16 )]
 position = Vector2( 200, 264 )
+z_index = 10
 collision_layer = 1024
 __meta__ = {
 "_edit_lock_": true
