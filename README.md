@@ -78,8 +78,15 @@
  ┣ 📂Item
  ┃ ┣ 📂Gate
  ┃ ┃ ┣ 📂Bridge
- ┃ ┃ ┣ 📂Door
- ┃ ┃ ┗ 📜Gate.cs
+ ┃ ┃ ┃ ┣ 📜Bridge.cs
+ ┃ ┃ ┃ ┣ 📜Bridge.png
+ ┃ ┃ ┃ ┣ 📜Bridge.png.import
+ ┃ ┃ ┃ ┗ 📜Bridge.tscn
+ ┃ ┃ ┗ 📂Door
+ ┃ ┃ ┃ ┣ 📜Door.cs
+ ┃ ┃ ┃ ┣ 📜Door.png
+ ┃ ┃ ┃ ┣ 📜Door.png.import
+ ┃ ┃ ┃ ┗ 📜Door.tscn
  ┃ ┣ 📂Key
  ┃ ┃ ┣ 📂KeyCard
  ┃ ┃ ┃ ┣ 📜KeyCard.png
