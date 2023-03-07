@@ -1,4 +1,5 @@
 using Godot;
+using static Game;
 
 // TODO: Switch to MoveAndSlideWithSnap for movement, wall and ceiling crawling, collision detection raycast, rotate to match surface on collision, attack strength (can be default), special Dash, no need for wall jumping (disable if needed)
 
@@ -7,34 +8,36 @@ public class Sneak : Player
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready. (Sneak.cs)");
+        GD.Print(Name + " is ready. (Sneak.cs)");
 
         // Update inherited player variables
-        this.gravity = 3000;
-        this.moveSpeed = 150;
-        this.jumpSpeed = 450;
+        gravity = SneakGravity;
+        moveSpeed = SneakMoveSpeed;
+        jumpSpeed = SneakJumpSpeed;
     }
 
     public override void AdjustMovementSpeeds()
     {
-        if (!this.IsOnFloor())
+        if (!IsOnFloor())
         {
             // Air movement
-            this.moveSpeed = 400;
-            this.jumpSpeed = 350;
+            moveSpeed = SneakAirMoveSpeed;
+            jumpSpeed = SneakAirJumpSpeed;
         }
         else
         {
             // Floor movement
-            this.moveSpeed = 150;
-            this.jumpSpeed = 450;
+            moveSpeed = SneakMoveSpeed;
+            jumpSpeed = SneakJumpSpeed;
         }
     }
 
-    // Move sneak using move and slide with snap
+    // Move Sneak using move and slide with snap
     public override void Move()
     {
-        // Automatically uses delta in calculations, need to include snap vector
-        velocity = MoveAndSlideWithSnap(velocity, Vector2.Up);
+        // Sneak uses MoveAndSlideWithSnap(velocity, snap, up) instead of MoveAndSlide(velocity, up)
+        // Sneak can jump when snap vector is set to Vector.Zero
+        // MoveAndSlideWithSnap automatically uses delta in calculations
+        velocity = MoveAndSlideWithSnap(velocity, Vector2.Zero, Vector2.Up);
     }
 }

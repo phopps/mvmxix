@@ -75,27 +75,19 @@ public class Player : Actor
     public void GetHorizontalInput()
     {
         // Get user input to set horizontal velocity
-        if (Input.IsActionPressed("right"))
-        {
-            this.velocity.x += this.moveSpeed;
-        }
-        if (Input.IsActionPressed("left"))
-        {
-            this.velocity.x -= this.moveSpeed;
-        }
+        if (Input.IsActionPressed("right")) { velocity.x += moveSpeed; }
+        if (Input.IsActionPressed("left")) { velocity.x -= moveSpeed; }
     }
 
     // Get user input for up and down player movement
     public virtual void GetVerticalInput(float delta)
     {
         // Apply gravity
-        velocity.y = velocity.y + gravity * delta;
+        velocity.y += gravity * delta;
 
         // Get user input
-        if (Input.IsActionPressed("up"))
-        {
-
-        }
+        if (Input.IsActionPressed("up")) { }
+        if (Input.IsActionPressed("down")) { }
     }
 
     // Jump and air jump abilities

@@ -1,4 +1,5 @@
 using Godot;
+using static Game;
 
 // TODO: Extra air jump, attack strength, special Launch (superjump), wall jumping
 
@@ -7,28 +8,28 @@ public class Tiny : Player
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready. (Tiny.cs)");
+        GD.Print(Name + " is ready. (Tiny.cs)");
 
         // Update inherited player variables
-        this.gravity = 1000;
-        this.moveSpeed = 125;
-        this.jumpSpeed = 450;
-        this.jumpsRemaining = 3;
+        gravity = TinyGravity;
+        moveSpeed = TinyMoveSpeed;
+        jumpSpeed = TinyJumpSpeed;
+        jumpsRemaining = 3;
     }
 
     public override void AdjustMovementSpeeds()
     {
-        if (!this.IsOnFloor())
+        if (!IsOnFloor())
         {
             // Air movement
-            this.moveSpeed = 200;
-            this.jumpSpeed = 400;
+            moveSpeed = TinyAirMoveSpeed;
+            jumpSpeed = TinyAirJumpSpeed;
         }
         else
         {
             // Floor movement
-            this.moveSpeed = 125;
-            this.jumpSpeed = 450;
+            moveSpeed = TinyMoveSpeed;
+            jumpSpeed = TinyJumpSpeed;
         }
     }
 }
