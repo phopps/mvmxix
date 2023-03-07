@@ -60,4 +60,9 @@ public class FlyingEnemy : Actor
             option += 1;
         FlyingDelay.Start();
     }
+
+    public void _Damage(Area2D aBody)
+    {
+        GD.Print("Collision with flying enemy!");
+    }
 }

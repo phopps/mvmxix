@@ -9,6 +9,7 @@ public class GroundEnemy : Actor
         name = "Ground Enemy";
         health = 30;
         speed = 80;
+        gravity = 2000;
         moveDirections.Remove("idle");
     }
 
@@ -35,12 +36,17 @@ public class GroundEnemy : Actor
             EnemyMovement(delta);
     }
 
+    public void Gravity(float delta)
+    {
+        velocity.y = velocity.y + gravity * delta;
+    }
+
     public void EnemyMovement(float delta)
     {
         if (isAggro)
-            velocity = Position.DirectionTo(playerBody.Position) * delta * speed;
+            velocity = Position.DirectionTo(playerBody.Position) * speed;
         else
-            velocity = moveDirections.ElementAt(option).Value * delta * (speed / 2);
+            velocity = moveDirections.ElementAt(option).Value * (speed / 2);
 
         if (velocity.x > 0)
         {
@@ -56,7 +62,8 @@ public class GroundEnemy : Actor
         }
 
         EnemySprite.Play("walk");
-        MoveAndCollide(velocity);
+        Gravity(delta);
+        MoveAndSlide(velocity);
     }
 
     public void _OnTimerTimeout()
@@ -84,6 +91,6 @@ public class GroundEnemy : Actor
     {
         // Handle damage given + taken here
         // aBody.health -= 10;
-        GD.Print("Collision!");
+        GD.Print("Collision with ground enemy!");
     }
 }

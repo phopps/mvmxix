@@ -10,12 +10,14 @@ public class Player : Actor
     [Export] public float gravity = 2000;
     [Export] public float jumpSpeed = 650;
     // public int jumpsRemaining = 2;
+    AnimationPlayer attackAnim;
 
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         GD.Print("(player ready)");
+        attackAnim = GetParent().GetNode<AnimationPlayer>("AnimationPlayer");
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.

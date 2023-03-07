@@ -36,5 +36,3 @@ limit_left = 0
 limit_top = 0
 limit_right = 720
 limit_bottom = 480
-
-[node name="Attack" type="Area2D" parent="."]

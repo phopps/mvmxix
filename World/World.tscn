@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://World/Tiles/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Entities/Actor/Player/Player.tscn" type="PackedScene" id=2]
@@ -7,13 +7,7 @@
 [ext_resource path="res://Scene/GroundEnemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scene/FlyingEnemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Entities/Actor/Player/Sneak/Sneak.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Entities/Actor/Player/Heavy/Heavy.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Entities/Actor/Player/Tiny/Tiny.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Entities/Actor/Player/Heavy/Heavy.cs" type="Script" id=11]
-[ext_resource path="res://Entities/Actor/Player/Tiny/Tiny.cs" type="Script" id=12]
 [ext_resource path="res://Entities/Actor/Player/Player.cs" type="Script" id=13]
-[ext_resource path="res://Entities/Actor/Player/Sneak/Sneak.cs" type="Script" id=14]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 4 )
@@ -40,23 +34,12 @@ position = Vector2( 112, 448 )
 script = ExtResource( 13 )
 
 [node name="GroundEnemy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 265, 451 )
+position = Vector2( 347, 450 )
 
 [node name="FlyingEnemy" parent="." instance=ExtResource( 6 )]
 position = Vector2( 262, 367 )
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
-
-[node name="Sneak" parent="." instance=ExtResource( 8 )]
-position = Vector2( 208, 272 )
-script = ExtResource( 14 )
-
-[node name="Heavy" parent="." instance=ExtResource( 9 )]
-position = Vector2( 24, 176 )
-script = ExtResource( 11 )
-
-[node name="Tiny" parent="." instance=ExtResource( 10 )]
-position = Vector2( 176, 32 )
-script = ExtResource( 12 )
+visible = false
 
 [connection signal="Pause" from="." to="HUD" method="onPause"]
