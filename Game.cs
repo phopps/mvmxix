@@ -1,4 +1,3 @@
-using System;
 using Godot;
 
 // TODO: Global constants, methods, resources, etc.
@@ -13,20 +12,24 @@ public class Game : Node
     public PackedScene heavyScene;
     public PackedScene sneakScene;
     public PackedScene tinyScene;
+    public Godot.Collections.Array Players;
 
     // Non-player characters
     public PackedScene dudeScene;
+    public Godot.Collections.Array NPCs;
 
     // Currently and previously selected player characters
     public string currentPlayer = "none";
     public string previousPlayer = "none";
 
+    // Player starting postion
+    public Vector2 startingPlayerPosition = new Vector2(200, 264);
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready. (Game.cs)");
+        GD.Print(Name + " is ready. (Game.cs)");
         game = this;
-
         LoadScenes();
     }
 
@@ -46,8 +49,14 @@ public class Game : Node
         sneak.Name = "Sneak";
         sneak.GlobalPosition = position;
 
+        // Remove any existing players
+        RemoveExistingPlayers();
+
         // Add the instance as a child of the world node
         GetNode("/root/World").AddChild(sneak);
+
+        // Add Sneak to the Players group
+        sneak.AddToGroup("Players");
         GD.Print("Sneak has been instanced. (Game.cs)");
     }
 
@@ -58,8 +67,14 @@ public class Game : Node
         heavy.Name = "Heavy";
         heavy.GlobalPosition = position;
 
+        // Remove any existing players
+        RemoveExistingPlayers();
+
         // Add the instance as a child of the world node
         GetNode("/root/World").AddChild(heavy);
+
+        // Add Heavy to the Players group
+        heavy.AddToGroup("Players");
         GD.Print("Heavy has been instanced. (Game.cs)");
     }
 
@@ -70,8 +85,14 @@ public class Game : Node
         tiny.Name = "Tiny";
         tiny.GlobalPosition = position;
 
+        // Remove any existing players
+        RemoveExistingPlayers();
+
         // Add the instance as a child of the world node
         GetNode("/root/World").AddChild(tiny);
+
+        // Add Tiny to the Players group
+        tiny.AddToGroup("Players");
         GD.Print("Tiny has been instanced. (Game.cs)");
     }
 
@@ -84,6 +105,19 @@ public class Game : Node
 
         // Add the instance as a child of the world node
         GetNode("/root/World").AddChild(dude);
+
+        // Add Dude to the NPCs group
+        dude.AddToGroup("NPCs");
         GD.Print("Dude has been instanced. (Game.cs)");
+    }
+
+    // Remove any existing players
+    public void RemoveExistingPlayers()
+    {
+        // Get an array of existing players
+        Players = GetTree().GetNodesInGroup("Players");
+
+        // Loop through existing players and delete their nodes and children nodes
+        foreach (KinematicBody2D player in Players) { player.QueueFree(); }
     }
 }

@@ -16,6 +16,9 @@ public class World : Node2D
 
         // Set starting player character to sneak
         game.currentPlayer = "sneak";
+
+        // Creating a player instance of sneak
+        game.InstanceSneak(game.startingPlayerPosition);
     }
 
     public override void _Input(InputEvent e)
@@ -35,7 +38,7 @@ public class World : Node2D
             // If selected character already exists in the world node
             // Then refill health, update position, etc.
             // Else create an instance of the character
-            game.InstanceSneak(new Vector2(472, -24));
+            game.InstanceSneak(game.startingPlayerPosition);
             game.currentPlayer = "sneak";
             EmitSignal("PlayerSelected");
         }
@@ -48,7 +51,7 @@ public class World : Node2D
             // If selected character already exists in the world node
             // Then refill health, update position, etc.
             // Else create an instance of the character
-            game.InstanceHeavy(new Vector2(560, -32));
+            game.InstanceHeavy(game.startingPlayerPosition);
             game.currentPlayer = "heavy";
             EmitSignal("PlayerSelected");
         }
@@ -61,7 +64,7 @@ public class World : Node2D
             // If selected character already exists in the world node
             // Then refill health, update position, etc.
             // Else create an instance of the character
-            game.InstanceTiny(new Vector2(632, -24));
+            game.InstanceTiny(game.startingPlayerPosition);
             game.currentPlayer = "tiny";
             EmitSignal("PlayerSelected");
         }
