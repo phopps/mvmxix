@@ -33,21 +33,14 @@ public class Player : Actor
         // Get user input for horizontal movement
         GetHorizontalInput();
 
-        // Apply gravity
-        velocity.y += gravity * delta;
+        // Get user input for vertical movement
+        GetVerticalInput(delta);
 
         // Jump on next frame
-        if (Input.IsActionJustPressed("jump"))
-        {
-            // Check if player is on the floor
-            if (IsOnFloor())
-            {
-                Jump();
-            }
-        }
+        Jump();
 
-        // Move player ('MoveAndSlide' automatically uses 'delta' in calculations)
-        velocity = MoveAndSlide(velocity, Vector2.Up);
+        // Move the player
+        Move();
 
         // Flip sprite to match direction player is moving
         FlipSprite();
@@ -76,35 +69,51 @@ public class Player : Actor
     }
 
     // Adjust physics to match each unique character movement style
-    public virtual void AdjustMovementSpeeds()
-    {
-
-    }
+    public virtual void AdjustMovementSpeeds() { }
 
     // Get user input for left and right player movement
     public void GetHorizontalInput()
     {
-        // Set horizontal velocity
-        if (Input.IsActionPressed("right"))
-        {
-            this.velocity.x += this.moveSpeed;
-        }
-        if (Input.IsActionPressed("left"))
-        {
-            this.velocity.x -= this.moveSpeed;
-        }
+        // Get user input to set horizontal velocity
+        if (Input.IsActionPressed("right")) { velocity.x += moveSpeed; }
+        if (Input.IsActionPressed("left")) { velocity.x -= moveSpeed; }
+    }
+
+    // Get user input for up and down player movement
+    public virtual void GetVerticalInput(float delta)
+    {
+        // Apply gravity
+        velocity.y += gravity * delta;
+
+        // Get user input
+        if (Input.IsActionPressed("up")) { }
+        if (Input.IsActionPressed("down")) { }
     }
 
     // Jump and air jump abilities
     public virtual void Jump()
     {
-        // Increment jump counters
-        jumpsUsed++;
-        jumpsRemaining--;
-        justJumped = true;
+        if (Input.IsActionJustPressed("jump"))
+        {
+            // Check if player is on the floor
+            if (IsOnFloor())
+            {
+                // Increment jump counters
+                jumpsUsed++;
+                jumpsRemaining--;
+                justJumped = true;
 
-        // Negative y values are up
-        velocity.y = -jumpSpeed;
+                // Negative y values are up
+                velocity.y = -jumpSpeed;
+            }
+        }
+    }
+
+    // Move the player
+    public virtual void Move()
+    {
+        // Automatically uses delta in calculations
+        velocity = MoveAndSlide(velocity, Vector2.Up);
     }
 
     // Attack enemies within range, but not obstacles
