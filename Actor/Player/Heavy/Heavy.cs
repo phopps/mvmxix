@@ -11,9 +11,9 @@ public class Heavy : Player
         GD.Print(Name + " is ready. (Heavy.cs)");
 
         // Update inherited player variables
-        gravity = HeavyGravity;
-        moveSpeed = HeavyMoveSpeed;
-        jumpSpeed = HeavyJumpSpeed;
+        gravity = game.heavyGravity;
+        moveSpeed = game.heavyMoveSpeed;
+        jumpSpeed = game.heavyJumpSpeed;
     }
 
     public override void AdjustMovementSpeeds()
@@ -21,14 +21,14 @@ public class Heavy : Player
         if (!IsOnFloor())
         {
             // Air movement
-            moveSpeed = HeavyAirMoveSpeed;
-            jumpSpeed = HeavyAirJumpSpeed;
+            moveSpeed = game.heavyAirMoveSpeed;
+            jumpSpeed = game.heavyAirJumpSpeed;
         }
         else
         {
             // Floor movement
-            moveSpeed = HeavyMoveSpeed;
-            jumpSpeed = HeavyJumpSpeed;
+            moveSpeed = game.heavyMoveSpeed;
+            jumpSpeed = game.heavyJumpSpeed;
         }
     }
 }
