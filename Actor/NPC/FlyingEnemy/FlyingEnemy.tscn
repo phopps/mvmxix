@@ -27,6 +27,7 @@ animations = [ {
 extents = Vector2( 15.5, 14 )
 
 [node name="FlyingEnemy" type="KinematicBody2D"]
+z_index = 30
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
