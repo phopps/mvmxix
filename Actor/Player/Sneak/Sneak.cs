@@ -32,6 +32,8 @@ public class Sneak : Player
         }
     }
 
+    //FIXME: I need an event with which to play sounds 'on landing'. Where does that go? It is currently not obvious. -Max
+
     // Move Sneak using move and slide with snap
     public override void Move()
     {
