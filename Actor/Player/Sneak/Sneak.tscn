@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Actor/Player/Player.gdshader" type="Shader" id=1]
+[ext_resource path="res://Actor/Player/Sneak/Sneak.png" type="Texture" id=2]
+[ext_resource path="res://Actor/Player/Sneak/Sneak.cs" type="Script" id=3]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/strength = 0.15
+shader_param/speed = 0.1
+shader_param/angle = 0.0
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 23, 7 )
+
+[node name="Sneak" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 2033
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 2 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

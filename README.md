@@ -2,8 +2,8 @@
 
 - [MVMXIX](#mvmxix)
   - [Style Guide](#style-guide)
-  - [Filetree](#filetree)
   - [Resources](#resources)
+  - [Filetree](#filetree)
 
 ## Style Guide
 
@@ -21,63 +21,116 @@
   - `[Export(PropertyHint.Range, "0,100000,1000,or_greater")] private int _income;`
   - `[Export(PropertyHint.File, "*.png,*.jpg")] private string _icon;`
   - Note: see [C# exports](https://docs.godotengine.org/en/latest/tutorials/scripting/c_sharp/c_sharp_exports.html) in latest unstable version for more details, similar to stable version
-- Use modifiers in this order: `public`/`protected`/`private`/`internal`/`virtual`/`override`/`abstract`/`new`/`static`/`readonly`
+- Use modifiers in this order: `public` / `protected` / `private` / `internal` / `virtual` / `override` / `abstract` / `new` / `static` / `readonly`
+
+## Resources
+
+[Moving Rainbow Gradient - Godot Shaders](https://godotshaders.com/shader/moving-rainbow-gradient/)
+
+[Stars shader - Godot Shaders](https://godotshaders.com/shader/stars-shader/)
 
 ## Filetree
 
 ```txt
 📦mvmxix
- ┣ 📂Asset
- ┃ ┣ 📜toaster-sheet.png
- ┃ ┣ 📜toaster-sheet.png.import
- ┃ ┣ 📜toaster-sheet2.png
- ┃ ┣ 📜toaster-sheet2.png.import
- ┃ ┣ 📜toaster-sheet3.png
- ┃ ┗ 📜toaster-sheet3.png.import
- ┣ 📂Entities
- ┃ ┗ 📂Actor
- ┃ ┃ ┣ 📂Player
- ┃ ┃ ┃ ┣ 📂Heavy
- ┃ ┃ ┃ ┃ ┣ 📜Heavy.cs
- ┃ ┃ ┃ ┃ ┣ 📜Heavy.png
- ┃ ┃ ┃ ┃ ┣ 📜Heavy.png.import
- ┃ ┃ ┃ ┃ ┗ 📜Heavy.tscn
- ┃ ┃ ┃ ┣ 📂Sneak
- ┃ ┃ ┃ ┃ ┣ 📜Sneak.cs
- ┃ ┃ ┃ ┃ ┣ 📜Sneak.png
- ┃ ┃ ┃ ┃ ┣ 📜Sneak.png.import
- ┃ ┃ ┃ ┃ ┗ 📜Sneak.tscn
- ┃ ┃ ┃ ┣ 📂Tiny
- ┃ ┃ ┃ ┃ ┣ 📜Tiny.cs
- ┃ ┃ ┃ ┃ ┣ 📜Tiny.png
- ┃ ┃ ┃ ┃ ┣ 📜Tiny.png.import
- ┃ ┃ ┃ ┃ ┗ 📜Tiny.tscn
- ┃ ┃ ┃ ┣ 📜Player.cs
- ┃ ┃ ┃ ┣ 📜Player.gdshader
- ┃ ┃ ┃ ┣ 📜Player.png
- ┃ ┃ ┃ ┣ 📜Player.png.import
- ┃ ┃ ┃ ┗ 📜Player.tscn
- ┃ ┃ ┗ 📜Actor.cs
- ┣ 📂Scene
- ┃ ┣ 📜FlyingEnemy.tscn
- ┃ ┣ 📜GroundEnemy.tscn
- ┃ ┗ 📜NPC.tscn
- ┣ 📂Script
- ┃ ┣ 📜FlyingEnemy.cs
- ┃ ┣ 📜GroundEnemy.cs
- ┃ ┗ 📜NPC.cs
+ ┣ 📂Actor
+ ┃ ┣ 📂NPC
+ ┃ ┃ ┣ 📂Dude
+ ┃ ┃ ┃ ┣ 📜Dude.cs
+ ┃ ┃ ┃ ┣ 📜Dude.png
+ ┃ ┃ ┃ ┣ 📜Dude.png.import
+ ┃ ┃ ┃ ┗ 📜Dude.tscn
+ ┃ ┃ ┣ 📂FlyingEnemy
+ ┃ ┃ ┃ ┣ 📜FlyingEnemy.cs
+ ┃ ┃ ┃ ┣ 📜FlyingEnemy.png
+ ┃ ┃ ┃ ┣ 📜FlyingEnemy.png.import
+ ┃ ┃ ┃ ┗ 📜FlyingEnemy.tscn
+ ┃ ┃ ┣ 📂GroundEnemy
+ ┃ ┃ ┃ ┣ 📜GroundEnemy.cs
+ ┃ ┃ ┃ ┣ 📜GroundEnemy.png
+ ┃ ┃ ┃ ┣ 📜GroundEnemy.png.import
+ ┃ ┃ ┃ ┗ 📜GroundEnemy.tscn
+ ┃ ┃ ┣ 📂ToastGuy
+ ┃ ┃ ┃ ┣ 📜ToastGuy.cs
+ ┃ ┃ ┃ ┣ 📜ToastGuy.png
+ ┃ ┃ ┃ ┣ 📜ToastGuy.png.import
+ ┃ ┃ ┃ ┗ 📜ToastGuy.tscn
+ ┃ ┃ ┗ 📜NPC.cs
+ ┃ ┣ 📂Player
+ ┃ ┃ ┣ 📂Heavy
+ ┃ ┃ ┃ ┣ 📜Heavy.cs
+ ┃ ┃ ┃ ┣ 📜Heavy.png
+ ┃ ┃ ┃ ┣ 📜Heavy.png.import
+ ┃ ┃ ┃ ┗ 📜Heavy.tscn
+ ┃ ┃ ┣ 📂Sneak
+ ┃ ┃ ┃ ┣ 📜Sneak.cs
+ ┃ ┃ ┃ ┣ 📜Sneak.png
+ ┃ ┃ ┃ ┣ 📜Sneak.png.import
+ ┃ ┃ ┃ ┗ 📜Sneak.tscn
+ ┃ ┃ ┣ 📂Tiny
+ ┃ ┃ ┃ ┣ 📜Tiny.cs
+ ┃ ┃ ┃ ┣ 📜Tiny.png
+ ┃ ┃ ┃ ┣ 📜Tiny.png.import
+ ┃ ┃ ┃ ┗ 📜Tiny.tscn
+ ┃ ┃ ┣ 📜Player.cs
+ ┃ ┃ ┗ 📜Player.gdshader
+ ┃ ┗ 📜Actor.cs
+ ┣ 📂Item
+ ┃ ┣ 📂Gate
+ ┃ ┃ ┣ 📂Bridge
+ ┃ ┃ ┃ ┣ 📜Bridge.cs
+ ┃ ┃ ┃ ┣ 📜Bridge.png
+ ┃ ┃ ┃ ┣ 📜Bridge.png.import
+ ┃ ┃ ┃ ┗ 📜Bridge.tscn
+ ┃ ┃ ┗ 📂Door
+ ┃ ┃ ┃ ┣ 📜Door.cs
+ ┃ ┃ ┃ ┣ 📜Door.png
+ ┃ ┃ ┃ ┣ 📜Door.png.import
+ ┃ ┃ ┃ ┗ 📜Door.tscn
+ ┃ ┣ 📂Key
+ ┃ ┃ ┣ 📂KeyCard
+ ┃ ┃ ┃ ┣ 📜KeyCard.png
+ ┃ ┃ ┃ ┗ 📜KeyCard.png.import
+ ┃ ┃ ┣ 📂SkeletonKey
+ ┃ ┃ ┃ ┣ 📜SkeletonKey.png
+ ┃ ┃ ┃ ┗ 📜SkeletonKey.png.import
+ ┃ ┃ ┗ 📜Key.cs
+ ┃ ┣ 📂Obstacle
+ ┃ ┃ ┣ 📂Crate
+ ┃ ┃ ┃ ┣ 📜Crate.png
+ ┃ ┃ ┃ ┗ 📜Crate.png.import
+ ┃ ┃ ┣ 📂Rock
+ ┃ ┃ ┃ ┣ 📜Rock.png
+ ┃ ┃ ┃ ┗ 📜Rock.png.import
+ ┃ ┃ ┗ 📜Obstacle.cs
+ ┃ ┣ 📂Shrine
+ ┃ ┃ ┣ 📜Shrine.cs
+ ┃ ┃ ┣ 📜Shrine.png
+ ┃ ┃ ┣ 📜Shrine.png.import
+ ┃ ┃ ┗ 📜Shrine.tscn
+ ┃ ┗ 📂Switch
+ ┃ ┃ ┣ 📂Button
+ ┃ ┃ ┃ ┣ 📜Button.png
+ ┃ ┃ ┃ ┗ 📜Button.png.import
+ ┃ ┃ ┣ 📂Lever
+ ┃ ┃ ┃ ┣ 📜Lever.png
+ ┃ ┃ ┃ ┗ 📜Lever.png.import
+ ┃ ┃ ┗ 📜Switch.cs
  ┣ 📂UI
  ┃ ┣ 📜HUD.cs
  ┃ ┗ 📜HUD.tscn
  ┣ 📂World
  ┃ ┣ 📂Bootsplash
- ┃ ┃ ┣ 📜bootsplash.png
- ┃ ┃ ┗ 📜bootsplash.png.import
- ┃ ┣ 📂Icons
+ ┃ ┃ ┣ 📜Bootsplash.png
+ ┃ ┃ ┗ 📜Bootsplash.png.import
+ ┃ ┣ 📂Icon
  ┃ ┃ ┣ 📜icon.ico
  ┃ ┃ ┣ 📜icon.png
  ┃ ┃ ┗ 📜icon.png.import
- ┃ ┣ 📂Tiles
+ ┃ ┣ 📂Level
+ ┃ ┃ ┣ 📜LevelOne.tscn
+ ┃ ┃ ┗ 📜Sandbox.tscn
+ ┃ ┣ 📂Tile
  ┃ ┃ ┣ 📜TileBottomLeft.png
  ┃ ┃ ┣ 📜TileBottomLeft.png.import
  ┃ ┃ ┣ 📜TileBottomRight.png
@@ -94,15 +147,11 @@
  ┃ ┗ 📜World.tscn
  ┣ 📜.gitignore
  ┣ 📜default_env.tres
+ ┣ 📜export_presets.cfg
+ ┣ 📜Game.cs
  ┣ 📜LICENSE
  ┣ 📜mvmxix.csproj
  ┣ 📜mvmxix.sln
  ┣ 📜project.godot
  ┗ 📜README.md
 ```
-
-## Resources
-
-[Moving Rainbow Gradient - Godot Shaders](https://godotshaders.com/shader/moving-rainbow-gradient/)
-
-[Stars shader - Godot Shaders](https://godotshaders.com/shader/stars-shader/)

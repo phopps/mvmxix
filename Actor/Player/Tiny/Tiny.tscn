@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Actor/Player/Tiny/Tiny.png" type="Texture" id=1]
+[ext_resource path="res://Actor/Player/Player.gdshader" type="Shader" id=2]
+[ext_resource path="res://Actor/Player/Tiny/Tiny.cs" type="Script" id=3]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 2 )
+shader_param/strength = 0.1
+shader_param/speed = 1.0
+shader_param/angle = 90.0
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 7 )
+
+[node name="Tiny" type="KinematicBody2D"]
+collision_layer = 8
+collision_mask = 2033
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 2 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
