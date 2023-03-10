@@ -39,6 +39,9 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 65536, 0, 0, 65537, 0, 0, 6
 
 [node name="Sneak" parent="." instance=ExtResource( 2 )]
 position = Vector2( 149, 343 )
+moveSpeed = 5000.0
+gravity = 5.0
+jumpSpeed = 10000.0
 
 [node name="MainCam" type="Camera2D" parent="."]
 script = ExtResource( 3 )
