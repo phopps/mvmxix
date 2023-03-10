@@ -15,9 +15,11 @@ public class GroundEnemy : Actor
 
     int option = 1;
     bool isAggro = false;
+    bool isAttacking = false;
     KinematicBody2D playerBody;
     AnimatedSprite EnemySprite;
     CollisionShape2D EnemyLeft, EnemyRight;
+    AnimationPlayer EnemyAttack;
     Timer EnemyDelay;
 
     public override void _Ready()
@@ -28,12 +30,15 @@ public class GroundEnemy : Actor
         EnemyDelay = GetNode<Timer>("Timer");
         EnemyLeft = GetNode<CollisionShape2D>("LineOfSight/LookLeft");
         EnemyRight = GetNode<CollisionShape2D>("LineOfSight/LookRight");
+        EnemyAttack = GetNode<AnimationPlayer>("AnimationPlayer");
     }
 
     public override void _PhysicsProcess(float delta)
     {
         if (!EnemyDelay.IsStopped())
             EnemyMovement(delta);
+        if (isAttacking)
+            EnemyAttack.Play("Attack");
     }
 
     public void Gravity(float delta)
@@ -66,6 +71,7 @@ public class GroundEnemy : Actor
         MoveAndSlide(velocity);
     }
 
+    // Movement Pattern
     public void _OnTimerTimeout()
     {
         if (option >= moveDirections.Count - 1)
@@ -75,22 +81,30 @@ public class GroundEnemy : Actor
         EnemyDelay.Start();
     }
 
-    public void _OnBodyEntered(KinematicBody2D body)
+    // Enemy vision
+    public void _LineOfSightEntered(KinematicBody2D body)
     {
         isAggro = true;
         playerBody = body;
     }
 
-    public void _OnBodyExited(KinematicBody2D body)
+    public void _LineOfSightExited(KinematicBody2D body)
     {
         isAggro = false;
         playerBody = null;
     }
 
-    public void _Damage(Area2D aBody)
+    // Attack collision
+    public void _Damage(Player body)
     {
         // Handle damage given + taken here
         // aBody.health -= 10;
         GD.Print("Collision with ground enemy!");
+        isAttacking = true;
+    }
+
+    public void _StopDamage(Player body)
+    {
+        isAttacking = false;
     }
 }
