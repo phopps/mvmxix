@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/HUD.cs" type="Script" id=1]
+[ext_resource path="res://Audio/Fantasy_Game_Crafting_Select_Gem.wav" type="AudioStream" id=2]
+[ext_resource path="res://Audio/Puzzle_Game_Organic_Wood_Block_Tone_Tap_1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/Puzzle_Game_Organic_Wood_Block_Tone_Tap_2.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -114,8 +117,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 24.0
 margin_top = 19.0
-margin_right = -27.0
-margin_bottom = -23.0
+margin_right = 693.0
+margin_bottom = 457.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Title" type="Label" parent="MenuBox"]
@@ -184,5 +187,16 @@ margin_right = 174.0
 margin_bottom = 53.0
 text = "Map goes here?"
 
-[connection signal="pressed" from="MenuBox/ColorRect/MenuOpt4" to="." method="onTestButton"]
+[node name="MenuUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="MenuDown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="MenuSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="MenuCancel" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="MenuBox/ColorRect/MenuOpt4" to="." method="_on_MenuOpt4_pressed"]
+[connection signal="pressed" from="MenuBox/ColorRect/MenuOpt4" to="." method="onTestButton"]
