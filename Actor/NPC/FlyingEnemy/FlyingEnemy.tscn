@@ -30,12 +30,8 @@ extents = Vector2( 15.5, 14 )
 extents = Vector2( 15.5, 14 )
 
 [node name="FlyingEnemy" type="KinematicBody2D"]
-<<<<<<< HEAD:Scene/FlyingEnemy.tscn
-position = Vector2( 346, 235 )
-collision_layer = 4
-=======
 z_index = 30
->>>>>>> develop:Actor/NPC/FlyingEnemy/FlyingEnemy.tscn
+collision_layer = 16
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -53,7 +49,7 @@ one_shot = true
 autostart = true
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 4
+collision_layer = 16
 collision_mask = 2
 
 [node name="EnemyHitBox" type="CollisionShape2D" parent="Area2D"]

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=10 format=2]
-=======
 [gd_scene load_steps=12 format=2]
->>>>>>> develop
 
 [ext_resource path="res://World/Level/Sandbox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Item/Gate/Bridge/Bridge.tscn" type="PackedScene" id=2]
@@ -11,13 +7,9 @@
 [ext_resource path="res://Actor/NPC/GroundEnemy/GroundEnemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actor/NPC/FlyingEnemy/FlyingEnemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=7]
-<<<<<<< HEAD
-[ext_resource path="res://Entities/Actor/Player/Player.cs" type="Script" id=13]
-=======
 [ext_resource path="res://Item/Gate/Door/Door.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Item/Shrine/Shrine.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Actor/NPC/ToastGuy/ToastGuy.tscn" type="PackedScene" id=17]
->>>>>>> develop
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 4 )
@@ -43,6 +35,7 @@ __meta__ = {
 }
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
+visible = false
 
 [node name="Shrine" parent="." instance=ExtResource( 16 )]
 position = Vector2( 200, 264 )
@@ -53,24 +46,13 @@ __meta__ = {
 }
 
 [node name="GroundEnemy" parent="." instance=ExtResource( 5 )]
-<<<<<<< HEAD
-position = Vector2( 347, 450 )
-
-[node name="FlyingEnemy" parent="." instance=ExtResource( 6 )]
-position = Vector2( 262, 367 )
-
-[node name="HUD" parent="." instance=ExtResource( 7 )]
-visible = false
-=======
-position = Vector2( 240, 448 )
-collision_layer = 16
+position = Vector2( 226, 449 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="FlyingEnemy" parent="." instance=ExtResource( 6 )]
 position = Vector2( 568, 192 )
-collision_layer = 16
 __meta__ = {
 "_edit_lock_": true
 }
@@ -89,6 +71,5 @@ position = Vector2( 520, 288 )
 position = Vector2( 96, 263 )
 collision_layer = 256
 collision_mask = 2047
->>>>>>> develop
 
 [connection signal="Pause" from="." to="HUD" method="onPause"]

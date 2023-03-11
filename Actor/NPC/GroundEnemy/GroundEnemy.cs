@@ -8,7 +8,7 @@ public class GroundEnemy : Actor
         name = "Ground Enemy";
         health = 30;
         moveSpeed = 80;
-        gravity = 80;
+        gravity = 2000;
         moveDirections.Remove("idle");
     }
 
@@ -23,8 +23,6 @@ public class GroundEnemy : Actor
 
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready. (GroundEnemy.cs)");
-
         EnemySprite = GetNode<AnimatedSprite>("AnimatedSprite");
         EnemyDelay = GetNode<Timer>("Timer");
         EnemyLeft = GetNode<CollisionShape2D>("LineOfSight/LookLeft");
@@ -48,9 +46,9 @@ public class GroundEnemy : Actor
     public void EnemyMovement(float delta)
     {
         if (isAggro)
-            velocity = Position.DirectionTo(playerBody.Position) * delta * moveSpeed;
+            velocity = Position.DirectionTo(playerBody.Position) * moveSpeed;
         else
-            velocity = moveDirections.ElementAt(option).Value * delta * (moveSpeed / 2);
+            velocity = moveDirections.ElementAt(option).Value * (moveSpeed / 2);
 
         if (velocity.x > 0)
         {
