@@ -43,7 +43,6 @@ __meta__ = {
 }
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
-visible = false
 
 [node name="Shrine" parent="." instance=ExtResource( 16 )]
 position = Vector2( 200, 264 )

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Fantasy_Game_Attack_Cloth_Armor_Hit_B.wav-a6bc3f2c08650a86aa1a3b1d3c6cf209.sample"
+
+[deps]
+
+source_file="res://Audio/Fantasy_Game_Attack_Cloth_Armor_Hit_B.wav"
+dest_files=[ "res://.import/Fantasy_Game_Attack_Cloth_Armor_Hit_B.wav-a6bc3f2c08650a86aa1a3b1d3c6cf209.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
