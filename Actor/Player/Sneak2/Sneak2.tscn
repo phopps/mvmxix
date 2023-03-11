@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Actor/Player/Player.gdshader" type="Shader" id=1]
 [ext_resource path="res://Actor/Player/Sneak2/Sneak2.png" type="Texture" id=2]
@@ -14,6 +14,9 @@ shader_param/speed = 0.1
 shader_param/angle = 0.0
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 23, 7 )
+
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 23, 7 )
 
 [node name="Sneak2" type="KinematicBody2D"]
@@ -36,3 +39,10 @@ stream = ExtResource( 5 )
 
 [node name="Chatter" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 3 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
