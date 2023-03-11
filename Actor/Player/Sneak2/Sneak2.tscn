@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Actor/Player/Player.gdshader" type="Shader" id=1]
+[ext_resource path="res://Actor/Player/Sneak/Sneak.png" type="Texture" id=2]
+[ext_resource path="res://Actor/Player/Sneak/Sneak.cs" type="Script" id=3]
+[ext_resource path="res://Audio/Fantasy_Game_Footstep_Grass_Heavy_D.wav" type="AudioStream" id=4]
+[ext_resource path="res://Audio/Fantasy_Game_Attack_Cloth_Armor_Hit_B.wav" type="AudioStream" id=5]
+[ext_resource path="res://Audio/Puzzle_Game_Accent_Chatter_01.wav" type="AudioStream" id=6]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/strength = 0.15
+shader_param/speed = 0.1
+shader_param/angle = 0.0
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 23, 7 )
+
+[node name="Sneak" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 2017
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 2 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Footstep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="JumpLanding" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Chatter" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
