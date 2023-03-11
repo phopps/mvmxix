@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Puzzle_Game_Collectible_Small_02.wav-8b7a8ba49d311244db8d44ca41d9f76f.sample"
+
+[deps]
+
+source_file="res://Audio/Puzzle_Game_Collectible_Small_02.wav"
+dest_files=[ "res://.import/Puzzle_Game_Collectible_Small_02.wav-8b7a8ba49d311244db8d44ca41d9f76f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

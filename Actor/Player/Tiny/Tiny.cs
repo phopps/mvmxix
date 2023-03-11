@@ -11,9 +11,9 @@ public class Tiny : Player
         GD.Print(Name + " is ready. (Tiny.cs)");
 
         // Update inherited player variables
-        gravity = TinyGravity;
-        moveSpeed = TinyMoveSpeed;
-        jumpSpeed = TinyJumpSpeed;
+        gravity = game.tinyGravity;
+        moveSpeed = game.tinyMoveSpeed;
+        jumpSpeed = game.tinyJumpSpeed;
         jumpsRemaining = 3;
     }
 
@@ -22,14 +22,14 @@ public class Tiny : Player
         if (!IsOnFloor())
         {
             // Air movement
-            moveSpeed = TinyAirMoveSpeed;
-            jumpSpeed = TinyAirJumpSpeed;
+            moveSpeed = game.tinyAirMoveSpeed;
+            jumpSpeed = game.tinyAirJumpSpeed;
         }
         else
         {
             // Floor movement
-            moveSpeed = TinyMoveSpeed;
-            jumpSpeed = TinyJumpSpeed;
+            moveSpeed = game.tinyMoveSpeed;
+            jumpSpeed = game.tinyJumpSpeed;
         }
     }
 }

@@ -13,6 +13,10 @@ public class HUD : CanvasLayer
     private Color c_black = new Color(0, 0, 0, 1);
     private Color c_red = new Color(1, 0, 0, 1);
     private Color c_white = new Color(1, 1, 1, 1);
+    private AudioStreamPlayer aud_up;
+    private AudioStreamPlayer aud_down;
+    private AudioStreamPlayer aud_select;
+    private AudioStreamPlayer aud_cancel;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -26,6 +30,11 @@ public class HUD : CanvasLayer
         menuOpt3 = GetNode<Label>("MenuBox/ColorRect/MenuOpt3");
         menuOpt4 = GetNode<Button>("MenuBox/ColorRect/MenuOpt4");
         menuOpt1.Modulate = c_red;
+
+        aud_up = GetNode<AudioStreamPlayer>("MenuUp");
+        aud_down = GetNode<AudioStreamPlayer>("MenuDown");
+        aud_select = GetNode<AudioStreamPlayer>("MenuSelect");
+        aud_cancel = GetNode<AudioStreamPlayer>("MenuCancel");
     }
 
     public void onPause()
@@ -35,6 +44,7 @@ public class HUD : CanvasLayer
         if (isPaused)
         {
             // Unpause game and return to normal.
+            aud_cancel.Play();
             isPaused = false;
             anim.PlayBackwards("pause");
         }
@@ -75,6 +85,7 @@ public class HUD : CanvasLayer
             }
             else if (e.IsActionPressed("ui_select"))
             {
+              aud_select.Play();
                 if (currentSelect == 4)
                 {
                     onTestButton(true);
@@ -91,7 +102,8 @@ public class HUD : CanvasLayer
     private void menuDown()
     {
         // Move the menu option down.
-        GD.Print("menu down.");
+        // GD.Print("menu down.");
+        aud_down.Play();
         currentSelect++;
         if (currentSelect > menuOptCount)
         {
@@ -103,7 +115,8 @@ public class HUD : CanvasLayer
     private void menuUp()
     {
         // Move the menu option up.
-        GD.Print("menu up.");
+        // GD.Print("menu up.");
+        aud_up.Play();
         currentSelect--;
         if (currentSelect < 1)
         {
