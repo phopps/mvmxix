@@ -18,7 +18,7 @@ extents = Vector2( 23, 7 )
 
 [node name="Sneak" type="KinematicBody2D"]
 collision_layer = 2
-collision_mask = 2033
+collision_mask = 2017
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]

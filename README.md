@@ -210,7 +210,6 @@
  ┃ ┗ 📜World.tscn
  ┣ 📜.gitignore
  ┣ 📜default_env.tres
- ┣ 📜export_presets.cfg
  ┣ 📜Game.cs
  ┣ 📜LICENSE
  ┣ 📜MainCam.cs
