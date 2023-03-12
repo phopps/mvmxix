@@ -5,7 +5,7 @@ using Godot;
 public class Player : Actor
 {
     // Player variables can be adjusted live in the Godot Editor while game is running
-    // [Export] public float gravity = 0;
+    [Export] public float gravity = 0;
     [Export] public float jumpSpeed = 0;
     [Export] public int jumpsUsed = 0;
     [Export] public int jumpsRemaining = 2;
