@@ -75,6 +75,69 @@
  ┃ ┃ ┣ 📜Player.cs
  ┃ ┃ ┗ 📜Player.gdshader
  ┃ ┗ 📜Actor.cs
+ ┣ 📂Audio
+ ┃ ┣ 📜Fantasy_Game_Action_Door_Close.wav
+ ┃ ┣ 📜Fantasy_Game_Action_Door_Close.wav.import
+ ┃ ┣ 📜Fantasy_Game_Action_Door_Open.wav
+ ┃ ┣ 📜Fantasy_Game_Action_Door_Open.wav.import
+ ┃ ┣ 📜Fantasy_Game_Attack_Cloth_Armor_Hit_A.wav
+ ┃ ┣ 📜Fantasy_Game_Attack_Cloth_Armor_Hit_A.wav.import
+ ┃ ┣ 📜Fantasy_Game_Attack_Cloth_Armor_Hit_B.wav
+ ┃ ┣ 📜Fantasy_Game_Attack_Cloth_Armor_Hit_B.wav.import
+ ┃ ┣ 📜Fantasy_Game_Attack_Creature_High_B.wav
+ ┃ ┣ 📜Fantasy_Game_Attack_Creature_High_B.wav.import
+ ┃ ┣ 📜Fantasy_Game_Crafting_Material_Liquid_Deep_Hit_1.wav
+ ┃ ┣ 📜Fantasy_Game_Crafting_Material_Liquid_Deep_Hit_1.wav.import
+ ┃ ┣ 📜Fantasy_Game_Crafting_Select_Gem.wav
+ ┃ ┣ 📜Fantasy_Game_Crafting_Select_Gem.wav.import
+ ┃ ┣ 📜Fantasy_Game_Crafting_Smelting_A.wav
+ ┃ ┣ 📜Fantasy_Game_Crafting_Smelting_A.wav.import
+ ┃ ┣ 📜Fantasy_Game_Footstep_Grass_Heavy_D.wav
+ ┃ ┣ 📜Fantasy_Game_Footstep_Grass_Heavy_D.wav.import
+ ┃ ┣ 📜Fantasy_Game_Footstep_Grass_Heavy_E.wav
+ ┃ ┣ 📜Fantasy_Game_Footstep_Grass_Heavy_E.wav.import
+ ┃ ┣ 📜Fantasy_Game_Footstep_Grass_Heavy_F.wav
+ ┃ ┣ 📜Fantasy_Game_Footstep_Grass_Heavy_F.wav.import
+ ┃ ┣ 📜Fantasy_Game_Item_Crafting_Sword_A.wav
+ ┃ ┣ 📜Fantasy_Game_Item_Crafting_Sword_A.wav.import
+ ┃ ┣ 📜Fantasy_Game_Loops_Crystal_1_Light_Hum_Ambience_Magical.wav
+ ┃ ┣ 📜Fantasy_Game_Loops_Crystal_1_Light_Hum_Ambience_Magical.wav.import
+ ┃ ┣ 📜Fantasy_Game_UI_Organic_Magic_Accept_Quest_Drum_Impact_1.wav
+ ┃ ┣ 📜Fantasy_Game_UI_Organic_Magic_Accept_Quest_Drum_Impact_1.wav.import
+ ┃ ┣ 📜Fantasy_Game_UI_Organic_Magic_Accept_Quest_Drum_Impact_2.wav
+ ┃ ┣ 📜Fantasy_Game_UI_Organic_Magic_Accept_Quest_Drum_Impact_2.wav.import
+ ┃ ┣ 📜Puzzle_Game_Accent_Bubble_01.wav
+ ┃ ┣ 📜Puzzle_Game_Accent_Bubble_01.wav.import
+ ┃ ┣ 📜Puzzle_Game_Accent_Chatter_01.wav
+ ┃ ┣ 📜Puzzle_Game_Accent_Chatter_01.wav.import
+ ┃ ┣ 📜Puzzle_Game_Accent_Chatter_02.wav
+ ┃ ┣ 📜Puzzle_Game_Accent_Chatter_02.wav.import
+ ┃ ┣ 📜Puzzle_Game_Achievement_01.wav
+ ┃ ┣ 📜Puzzle_Game_Achievement_01.wav.import
+ ┃ ┣ 📜Puzzle_Game_Break_Magic_01.wav
+ ┃ ┣ 📜Puzzle_Game_Break_Magic_01.wav.import
+ ┃ ┣ 📜Puzzle_Game_Break_Magic_05.wav
+ ┃ ┣ 📜Puzzle_Game_Break_Magic_05.wav.import
+ ┃ ┣ 📜Puzzle_Game_Collectible_Small_01.wav
+ ┃ ┣ 📜Puzzle_Game_Collectible_Small_01.wav.import
+ ┃ ┣ 📜Puzzle_Game_Collectible_Small_02.wav
+ ┃ ┣ 📜Puzzle_Game_Collectible_Small_02.wav.import
+ ┃ ┣ 📜Puzzle_Game_Collectible_Small_03.wav
+ ┃ ┣ 📜Puzzle_Game_Collectible_Small_03.wav.import
+ ┃ ┣ 📜Puzzle_Game_Collectible_Small_04.wav
+ ┃ ┣ 📜Puzzle_Game_Collectible_Small_04.wav.import
+ ┃ ┣ 📜Puzzle_Game_Collectible_Small_05.wav
+ ┃ ┣ 📜Puzzle_Game_Collectible_Small_05.wav.import
+ ┃ ┣ 📜Puzzle_Game_Collectible_Small_06.wav
+ ┃ ┣ 📜Puzzle_Game_Collectible_Small_06.wav.import
+ ┃ ┣ 📜Puzzle_Game_Organic_Wood_Block_Tone_Tap_1.wav
+ ┃ ┣ 📜Puzzle_Game_Organic_Wood_Block_Tone_Tap_1.wav.import
+ ┃ ┣ 📜Puzzle_Game_Organic_Wood_Block_Tone_Tap_2.wav
+ ┃ ┣ 📜Puzzle_Game_Organic_Wood_Block_Tone_Tap_2.wav.import
+ ┃ ┣ 📜Puzzle_Game_Organic_Wood_Block_Tone_Tap_3_App_Click.wav
+ ┃ ┣ 📜Puzzle_Game_Organic_Wood_Block_Tone_Tap_3_App_Click.wav.import
+ ┃ ┣ 📜Puzzle_Game_Organic_Wood_Block_Tone_Tap_4_App_Click.wav
+ ┃ ┗ 📜Puzzle_Game_Organic_Wood_Block_Tone_Tap_4_App_Click.wav.import
  ┣ 📂Item
  ┃ ┣ 📂Gate
  ┃ ┃ ┣ 📂Bridge
@@ -147,11 +210,16 @@
  ┃ ┗ 📜World.tscn
  ┣ 📜.gitignore
  ┣ 📜default_env.tres
- ┣ 📜export_presets.cfg
  ┣ 📜Game.cs
  ┣ 📜LICENSE
+ ┣ 📜MainCam.cs
+ ┣ 📜MainCam.gd
  ┣ 📜mvmxix.csproj
  ┣ 📜mvmxix.sln
+ ┣ 📜OneScreenTile.png
+ ┣ 📜OneScreenTile.png.import
  ┣ 📜project.godot
- ┗ 📜README.md
+ ┣ 📜README.md
+ ┣ 📜TestLevel.cs
+ ┗ 📜TestLevel.tscn
 ```

@@ -117,8 +117,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 24.0
 margin_top = 19.0
-margin_right = 693.0
-margin_bottom = 457.0
+margin_right = 1413.0
+margin_bottom = 937.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Title" type="Label" parent="MenuBox"]
@@ -198,5 +198,5 @@ stream = ExtResource( 2 )
 
 [node name="MenuCancel" type="AudioStreamPlayer" parent="."]
 
-[connection signal="pressed" from="MenuBox/ColorRect/MenuOpt4" to="." method="_on_MenuOpt4_pressed"]
 [connection signal="pressed" from="MenuBox/ColorRect/MenuOpt4" to="." method="onTestButton"]
+[connection signal="pressed" from="MenuBox/ColorRect/MenuOpt4" to="." method="_on_MenuOpt4_pressed"]
