@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/FlyingEnemy.png-759128c17a6b7fab102f0fb5c4eef3e0.stex"
+path="res://.import/FlyingEnemy.png-185f85ecf911df89975829a14cd0c4b1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actor/NPC/FlyingEnemy/FlyingEnemy.png"
-dest_files=[ "res://.import/FlyingEnemy.png-759128c17a6b7fab102f0fb5c4eef3e0.stex" ]
+source_file="res://Actor/Enemy/FlyingEnemy/FlyingEnemy.png"
+dest_files=[ "res://.import/FlyingEnemy.png-185f85ecf911df89975829a14cd0c4b1.stex" ]
 
 [params]
 

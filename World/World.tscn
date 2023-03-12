@@ -4,8 +4,8 @@
 [ext_resource path="res://Item/Gate/Bridge/Bridge.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/World.cs" type="Script" id=3]
 [ext_resource path="res://World/Background.gdshader" type="Shader" id=4]
-[ext_resource path="res://Actor/NPC/GroundEnemy/GroundEnemy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Actor/NPC/FlyingEnemy/FlyingEnemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Actor/Enemy/GroundEnemy/GroundEnemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Actor/Enemy/FlyingEnemy/FlyingEnemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Actor/Player/Sneak2/Sneak2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Item/Gate/Door/Door.tscn" type="PackedScene" id=12]
@@ -52,7 +52,7 @@ __meta__ = {
 }
 
 [node name="FlyingEnemy" parent="." instance=ExtResource( 6 )]
-position = Vector2( 568, 192 )
+position = Vector2( 589, 227 )
 __meta__ = {
 "_edit_lock_": true
 }

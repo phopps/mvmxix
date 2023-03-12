@@ -1,7 +1,8 @@
 using System.Linq;
+using System.Collections.Generic;
 using Godot;
 
-public class GroundEnemy : Actor
+public class GroundEnemy : Enemy
 {
     public GroundEnemy()
     {
@@ -9,13 +10,17 @@ public class GroundEnemy : Actor
         health = 30;
         moveSpeed = 80;
         gravity = 2000;
-        moveDirections.Remove("idle");
+        isAggro = false;
+        isAttacking = false;
+        moveDirections = new Dictionary<string, Vector2>()
+        {
+            { "left", Vector2.Left},
+            { "right", Vector2.Right}
+        };
     }
 
     int option = 1;
-    bool isAggro = false;
-    bool isAttacking = false;
-    KinematicBody2D playerBody;
+    public KinematicBody2D playerBody;
     AnimatedSprite EnemySprite;
     CollisionShape2D EnemyLeft, EnemyRight;
     AnimationPlayer EnemyAttack;
@@ -35,7 +40,7 @@ public class GroundEnemy : Actor
         if (!EnemyDelay.IsStopped())
             EnemyMovement(delta);
         if (isAttacking)
-            EnemyAttack.Play("Attack");
+            AttackAnimation();
     }
 
     public void Gravity(float delta)
@@ -50,6 +55,14 @@ public class GroundEnemy : Actor
         else
             velocity = moveDirections.ElementAt(option).Value * (moveSpeed / 2);
 
+        DirectionFacing();
+        EnemySprite.Play("walk");
+        Gravity(delta);
+        MoveAndSlide(velocity);
+    }
+
+    public void DirectionFacing()
+    {
         if (velocity.x > 0)
         {
             EnemySprite.FlipH = false;
@@ -62,10 +75,14 @@ public class GroundEnemy : Actor
             EnemyLeft.Disabled = false;
             EnemyRight.Disabled = true;
         }
+    }
 
-        EnemySprite.Play("walk");
-        Gravity(delta);
-        MoveAndSlide(velocity);
+    public void AttackAnimation()
+    {
+        if (!EnemySprite.FlipH)
+            EnemyAttack.Play("AttackRight");
+        else
+            EnemyAttack.Play("AttackLeft");
     }
 
     // Movement Pattern
@@ -100,6 +117,7 @@ public class GroundEnemy : Actor
         isAttacking = true;
     }
 
+    // No longer in player hurtbox
     public void _StopDamage(Player body)
     {
         isAttacking = false;
