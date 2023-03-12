@@ -12,7 +12,7 @@ public class Player : Actor
     [Export] public bool isActivePlayer = false;
     [Export] public bool justJumped = false;
 
-    private Sprite _sprite;
+    public Sprite _sprite;
     // private string _name;
 
     // Called when the node enters the scene tree for the first time.

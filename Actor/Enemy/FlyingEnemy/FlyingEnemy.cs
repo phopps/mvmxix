@@ -2,13 +2,12 @@ using System.Collections.Generic;
 using System.Linq;
 using Godot;
 
-public class FlyingEnemy : Actor
+public class FlyingEnemy : Enemy
 {
     public FlyingEnemy()
     {
         name = "Flying Enemy";
         health = 10;
-        moveDirections.Clear();
         moveDirections = new Dictionary<string, Vector2>()
         {
             // Right
