@@ -5,14 +5,14 @@ using Godot;
 public class Player : Actor
 {
     // Player variables can be adjusted live in the Godot Editor while game is running
-    // [Export] public float gravity = 0;
+    [Export] public float gravity = 0;
     [Export] public float jumpSpeed = 0;
     [Export] public int jumpsUsed = 0;
     [Export] public int jumpsRemaining = 2;
     [Export] public bool isActivePlayer = false;
     [Export] public bool justJumped = false;
 
-    private Sprite _sprite;
+    public Sprite _sprite;
     // private string _name;
 
     // Called when the node enters the scene tree for the first time.

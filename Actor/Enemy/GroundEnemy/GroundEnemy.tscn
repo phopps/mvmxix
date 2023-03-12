@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Actor/NPC/GroundEnemy/GroundEnemy.png" type="Texture" id=1]
-[ext_resource path="res://Actor/NPC/GroundEnemy/GroundEnemy.cs" type="Script" id=2]
+[ext_resource path="res://Actor/Enemy/GroundEnemy/GroundEnemy.png" type="Texture" id=1]
+[ext_resource path="res://Actor/Enemy/GroundEnemy/GroundEnemy.cs" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -35,8 +35,35 @@ extents = Vector2( 12, 86 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 15, 10.5 )
 
+[sub_resource type="Animation" id=11]
+resource_name = "AttackLeft"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -5, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
 [sub_resource type="Animation" id=8]
-resource_name = "Attack"
+resource_name = "AttackRight"
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:position")
 tracks/0/interp = 1
@@ -48,6 +75,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 5, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [node name="GroundEnemy" type="KinematicBody2D"]
@@ -92,7 +131,8 @@ position = Vector2( 0, 3 )
 shape = SubResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Attack = SubResource( 8 )
+anims/AttackLeft = SubResource( 11 )
+anims/AttackRight = SubResource( 8 )
 
 [connection signal="timeout" from="Timer" to="." method="_OnTimerTimeout"]
 [connection signal="body_entered" from="LineOfSight" to="." method="_LineOfSightEntered"]

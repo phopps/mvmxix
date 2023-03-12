@@ -5,6 +5,7 @@ using static Game;
 
 public class Sneak : Player
 {
+    AnimationPlayer sneakAttack;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -14,6 +15,27 @@ public class Sneak : Player
         gravity = game.sneakGravity;
         moveSpeed = game.sneakMoveSpeed;
         jumpSpeed = game.sneakJumpSpeed;
+        sneakAttack = GetNode<AnimationPlayer>("AnimationPlayer");
+    }
+
+    public override void _Input(InputEvent @event)
+    {
+        if (@event.IsActionPressed("attack"))
+            Attack();
+    }
+
+    public override void Attack()
+    {
+        if (!_sprite.FlipH)
+            sneakAttack.Play("AttackRight");
+        else
+            sneakAttack.Play("AttackLeft");
+    }
+
+    public void _Attack(GroundEnemy enemy)
+    {
+        enemy.health -= 10;
+        GD.Print(enemy.health);
     }
 
     public override void AdjustMovementSpeeds()
