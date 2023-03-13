@@ -28,7 +28,7 @@ public class GroundEnemy : Enemy
 
     public override void _Ready()
     {
-        GD.Print(Name + " is ready. (GroundEnemey.cs)");
+        GD.Print(Name + " is ready. (GroundEnemy.cs)");
 
         EnemySprite = GetNode<AnimatedSprite>("AnimatedSprite");
         EnemyDelay = GetNode<Timer>("Timer");
