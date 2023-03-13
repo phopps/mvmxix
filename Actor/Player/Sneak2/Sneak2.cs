@@ -13,7 +13,7 @@ public class Sneak2 : KinematicBody2D
     [Export] public Vector2 velocity;
     [Export] public int jumpsUsed = 0;
     [Export] public int jumpsRemaining = 2;
-    [Export] public int jumpsRemainingMax = 2;
+    [Export] public int maxJumpsRemaining = 2;
     [Export] public bool justJumped;
     [Export] public Sprite sprite;
     // private bool hasTripleJump = false;
@@ -50,7 +50,7 @@ public class Sneak2 : KinematicBody2D
             // Reset jump counters if player is on floor
             if (IsOnFloor())
             {
-                jumpsRemaining = jumpsRemainingMax;
+                jumpsRemaining = maxJumpsRemaining;
                 jumpsUsed = 0;
             }
 
