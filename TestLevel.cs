@@ -12,7 +12,7 @@ public class TestLevel : Node2D
 
   // Called when the node enters the scene tree for the first time.
   public override void _Ready() {
-    player = (Node2D) GetNode("Sneak");
+    player = (Node2D) GetNode("Sneak2");
     cam = (MainCam) GetNode("MainCam");
     // cam.setTarget(player);
     Position2D spawn = (Position2D) GetNodeOrNull(playerSpawn);
