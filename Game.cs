@@ -38,31 +38,31 @@ public class Game : Node
     [Export] public Vector2 startingPlayerPosition = new Vector2(200, 264);
 
     // Sneak default values
-    [Export] public float sneakGravity = 3000;
-    [Export] public float sneakMoveSpeed = 300;
-    [Export] public float sneakJumpSpeed = 450;
-    [Export] public float sneakAirMoveSpeed = 600;
-    [Export] public float sneakAirJumpSpeed = 350;
-    [Export] public int sneakCollisionLayer = 2;
-    [Export] public int sneakCollisionMask = 2033;
+    // [Export] public float sneakGravity = 3000;
+    // [Export] public float sneakMoveSpeed = 300;
+    // [Export] public float sneakJumpSpeed = 450;
+    // [Export] public float sneakAirMoveSpeed = 600;
+    // [Export] public float sneakAirJumpSpeed = 350;
+    // [Export] public int sneakCollisionLayer = 2;
+    // [Export] public int sneakCollisionMask = 2033;
 
     // Heavy default values
-    [Export] public float heavyGravity = 4000;
-    [Export] public float heavyMoveSpeed = 175;
-    [Export] public float heavyJumpSpeed = 400;
-    [Export] public float heavyAirMoveSpeed = 50;
-    [Export] public float heavyAirJumpSpeed = 300;
-    [Export] public int heavyCollisionLayer = 4;
-    [Export] public int heavyCollisionMask = 2033;
+    // [Export] public float heavyGravity = 4000;
+    // [Export] public float heavyMoveSpeed = 175;
+    // [Export] public float heavyJumpSpeed = 400;
+    // [Export] public float heavyAirMoveSpeed = 50;
+    // [Export] public float heavyAirJumpSpeed = 300;
+    // [Export] public int heavyCollisionLayer = 4;
+    // [Export] public int heavyCollisionMask = 2033;
 
     // Tiny default values
-    [Export] public float tinyGravity = 1000;
-    [Export] public float tinyMoveSpeed = 150;
-    [Export] public float tinyJumpSpeed = 450;
-    [Export] public float tinyAirMoveSpeed = 200;
-    [Export] public float tinyAirJumpSpeed = 400;
-    [Export] public int tinyCollisionLayer = 8;
-    [Export] public int tinyCollisionMask = 2033;
+    // [Export] public float tinyGravity = 1000;
+    // [Export] public float tinyMoveSpeed = 150;
+    // [Export] public float tinyJumpSpeed = 450;
+    // [Export] public float tinyAirMoveSpeed = 200;
+    // [Export] public float tinyAirJumpSpeed = 400;
+    // [Export] public int tinyCollisionLayer = 8;
+    // [Export] public int tinyCollisionMask = 2033;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()

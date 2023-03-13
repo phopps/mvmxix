@@ -1,10 +1,18 @@
 using Godot;
-using static Game;
+// using static Game;
 
 // TODO: Switch to MoveAndSlideWithSnap for movement, wall and ceiling crawling, collision detection raycast, rotate to match surface on collision, attack strength (can be default), special Dash, no need for wall jumping (disable if needed)
 
 public class Sneak : Player
 {
+    // Sneak default values
+    [Export] public float sneakGravity = 3000;
+    [Export] public float sneakMoveSpeed = 300;
+    [Export] public float sneakJumpSpeed = 450;
+    [Export] public float sneakAirMoveSpeed = 600;
+    [Export] public float sneakAirJumpSpeed = 350;
+    [Export] public int sneakCollisionLayer = 2;
+    [Export] public int sneakCollisionMask = 2033;
     AnimationPlayer sneakAttack;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -12,9 +20,9 @@ public class Sneak : Player
         GD.Print(Name + " is ready. (Sneak.cs)");
 
         // Update inherited player variables
-        gravity = game.sneakGravity;
-        moveSpeed = game.sneakMoveSpeed;
-        jumpSpeed = game.sneakJumpSpeed;
+        gravity = sneakGravity;
+        moveSpeed = sneakMoveSpeed;
+        jumpSpeed = sneakJumpSpeed;
         sneakAttack = GetNode<AnimationPlayer>("AnimationPlayer");
     }
 
@@ -43,14 +51,14 @@ public class Sneak : Player
         if (!IsOnFloor())
         {
             // Air movement
-            moveSpeed = game.sneakAirMoveSpeed;
-            jumpSpeed = game.sneakAirJumpSpeed;
+            moveSpeed = sneakAirMoveSpeed;
+            jumpSpeed = sneakAirJumpSpeed;
         }
         else
         {
             // Floor movement
-            moveSpeed = game.sneakMoveSpeed;
-            jumpSpeed = game.sneakJumpSpeed;
+            moveSpeed = sneakMoveSpeed;
+            jumpSpeed = sneakJumpSpeed;
         }
     }
 
