@@ -7,8 +7,9 @@
 
 ## Style Guide
 
-- [C# basics](https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_basics.html)
-- [C# API differences to GDScript](https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/c_sharp_differences.html)
+- [C# style guide — Godot Engine (3.5) documentation](https://docs.godotengine.org/en/3.5/tutorials/scripting/c_sharp/c_sharp_style_guide.html)
+- [C# basics — Godot Engine (3.5) documentation](https://docs.godotengine.org/en/3.5/tutorials/scripting/c_sharp/c_sharp_basics.html)
+- [C# API differences to GDScript — Godot Engine (3.5) documentation](https://docs.godotengine.org/en/3.5/tutorials/scripting/c_sharp/c_sharp_differences.html)
 - Use 4 spaces instead of tabs
 - Use `PascalCase` instead of `snake_case`:
   - Use `PascalCase` for all namespaces, type names and member level identifiers (i.e. methods, properties, constants, events), except for private fields
