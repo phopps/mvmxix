@@ -1,7 +1,5 @@
 using Godot;
 
-// TODO: move moveDirections to NPC or global script
-
 public class Actor : KinematicBody2D
 {
     public string name;
@@ -11,7 +9,7 @@ public class Actor : KinematicBody2D
 
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready. (Actor.cs)");
+        GD.Print(Name + " is ready. (Actor.cs)");
     }
 
 }

@@ -27,7 +27,7 @@ public class FlyingEnemy : Enemy
 
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready. (FlyingEnemy.cs)");
+        GD.Print(Name + " is ready. (FlyingEnemy.cs)");
 
         FlyingSprite = GetNode<AnimatedSprite>("AnimatedSprite");
         FlyingDelay = GetNode<Timer>("Timer");

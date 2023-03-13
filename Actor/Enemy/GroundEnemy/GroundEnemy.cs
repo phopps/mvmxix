@@ -1,5 +1,5 @@
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using Godot;
 
 public class GroundEnemy : Enemy
@@ -28,6 +28,8 @@ public class GroundEnemy : Enemy
 
     public override void _Ready()
     {
+        GD.Print(Name + " is ready. (GroundEnemy.cs)");
+
         EnemySprite = GetNode<AnimatedSprite>("AnimatedSprite");
         EnemyDelay = GetNode<Timer>("Timer");
         EnemyLeft = GetNode<CollisionShape2D>("LineOfSight/LookLeft");
