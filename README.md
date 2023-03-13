@@ -16,16 +16,16 @@ Up | W, Up Arrow | Left Stick Up | Left Stick Up | Left Stick Up
 Down | S, Down Arrow | Left Stick Down | Left Stick Down | Left Stick Down
 Left | A, Left Arrow | Left Stick Left | Left Stick Left | Left Stick Left
 Right | D, Right Arrow | Left Stick Right | Left Stick Right | Left Stick Right
-Jump, Accept | Space | A | Cross | B
-Special, Back | Q | B | Circle | A
+Jump | Space | A | Cross | B
+Special | Q | B | Circle | A
 Attack | Shift | X | Square | Y
 Interact | F | Y | Triangle | X
 Pause | P, Escape | Start | Options | Plus
+Accept (Select) | Enter, Space | A | Cross | B
+Back (Cancel) | Escape, Backspace | B | Circle | A
 Select Sneak | 1 | D-Pad Left | D-Pad Left | D-Pad Left
 Select Heavy | 2 | D-Pad Up | D-Pad Up | D-Pad Up
 Select Tiny | 3 | D-Pad Right | D-Pad Right | D-Pad Right
-<!-- Accept | Enter, Space | A | Cross | B -->
-<!-- Back | Escape, Backspace | B | Circle | A -->
 
 ## Style Guide
 
