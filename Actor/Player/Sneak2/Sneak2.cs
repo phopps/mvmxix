@@ -85,6 +85,9 @@ public class Sneak2 : KinematicBody2D
           GD.Print("found triplejump");
           this.hasTripleJump = true;
           return true;
+        } else if (target.GetWhichPowerup() == "CaveSpawn") {
+          GD.Print("reset spawn point to cave");
+          return true;
         }
       }
       // if(!this.isPickedUp) {
