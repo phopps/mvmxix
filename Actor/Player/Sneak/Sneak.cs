@@ -6,6 +6,7 @@ using static Game;
 public class Sneak : Player
 {
     AnimationPlayer sneakAttack;
+    private Area2D hitBox;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -16,6 +17,7 @@ public class Sneak : Player
         moveSpeed = game.sneakMoveSpeed;
         jumpSpeed = game.sneakJumpSpeed;
         sneakAttack = GetNode<AnimationPlayer>("AnimationPlayer");
+        hitBox = GetNode<Area2D>("HitBox");
     }
 
     public override void _Input(InputEvent @event)
@@ -26,16 +28,37 @@ public class Sneak : Player
 
     public override void Attack()
     {
-        if (!_sprite.FlipH)
+      GD.Print("triggered attack?");
+        if (!_sprite.FlipH) {
             sneakAttack.Play("AttackRight");
-        else
+        } else {
             sneakAttack.Play("AttackLeft");
+        }
     }
 
-    public void _Attack(GroundEnemy enemy)
-    {
-        enemy.health -= 10;
-        GD.Print(enemy.health);
+    // public void _Attack(GroundEnemy enemy)
+    // {
+    //     enemy.health -= 10;
+    //     GD.Print(enemy.health);
+    // }
+
+    public void NewAttack() {
+
+      //if HitBox is active
+      // check for overlapping areas
+      // if overlapping area is enemy, do damage.
+      Godot.Collections.Array targets = hitBox.GetOverlappingBodies();
+
+      foreach(PhysicsBody2D body in targets) {
+        if (body is Enemy) {
+          Enemy enemy = (Enemy) body;
+          enemy.health -= 10;
+        } else {
+          GD.Print("Found other bodies that were not enemies");
+          GD.Print(body);
+        }
+      }
+
     }
 
     public override void AdjustMovementSpeeds()
