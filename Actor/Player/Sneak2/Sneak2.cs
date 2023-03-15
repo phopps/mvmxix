@@ -4,8 +4,8 @@ public class Sneak2 : KinematicBody2D
 {
     [Export] public bool isActivePlayer = true;
     [Export] public string name;
-    [Export] public int health;
-    // [Export] public int maxHealth;
+    [Export] public int maxHealth = 50;
+    private int health;
     [Export] public float gravity = 3000;
     [Export] public float moveSpeed = 300;
     // [Export] public float maxMoveSpeed = 300;
@@ -24,11 +24,17 @@ public class Sneak2 : KinematicBody2D
     private bool playerUsedJump = false;
     private Area2D attackHitbox;
     private AnimationPlayer anim;
+    private AnimationPlayer iframesAnim;
+    [Export] public float iframes = 1.0f;
+    private float timeUntilVuln = 0.0f;
+    private bool isDead = false;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         GD.Print(Name + " is ready. (Sneak2.cs)");
+
+        health = maxHealth;
 
         // Flip sprite to match direction player is moving
         sprite = GetNode<Sprite>("Sprite");
@@ -37,6 +43,7 @@ public class Sneak2 : KinematicBody2D
         aud_landing = GetNode<AudioStreamPlayer>("JumpLanding");
         attackHitbox = GetNode<Area2D>("AttackHitbox");
         anim = GetNode<AnimationPlayer>("AnimationPlayer");
+        iframesAnim = GetNode<AnimationPlayer>("IframesAnimation");
     }
 
     // Called 60 times per second independent of framerate, delta is time since physics process called.
@@ -46,8 +53,10 @@ public class Sneak2 : KinematicBody2D
         velocity.x = 0;
 
         // Get user input for horizontal movement
-        if (Input.IsActionPressed("right")) { velocity.x += moveSpeed; }
-        if (Input.IsActionPressed("left")) { velocity.x -= moveSpeed; }
+        if (!isDead) {
+          if (Input.IsActionPressed("right")) { velocity.x += moveSpeed; }
+          if (Input.IsActionPressed("left")) { velocity.x -= moveSpeed; }
+        }
 
         // Apply gravity
         velocity.y += gravity * delta;
@@ -62,13 +71,15 @@ public class Sneak2 : KinematicBody2D
         // }
 
         // Jump on next frame
-        if (Input.IsActionJustPressed("jump"))
-        {
-            // Jump if player has jumps remaining
-            if (jumpsRemaining >= jumpsUsed)
-            {
-                Jump();
-            }
+        if (!isDead) {
+          if (Input.IsActionJustPressed("jump"))
+          {
+              // Jump if player has jumps remaining
+              if (jumpsRemaining >= jumpsUsed)
+              {
+                  Jump();
+              }
+          }
         }
         // Reset jump counters if player is on floor
         if (IsOnFloor()) {
@@ -115,11 +126,20 @@ public class Sneak2 : KinematicBody2D
             // Player is not moving
             // Play idle animation here if it doesn't effect physics or controls
         }
+
+        //handle iframes
+        if(timeUntilVuln > 0) {
+          timeUntilVuln -= delta;
+        }
     }
 
     public override void _Input(InputEvent @event) {
       if (@event.IsActionPressed("attack")) {
         AttackInput();
+      }
+      
+      if (@event.IsActionPressed("respawn")) {
+        this.isDead = false;
       }
     }
 
@@ -127,7 +147,11 @@ public class Sneak2 : KinematicBody2D
       //this is when the user triggers the event
       // GD.Print("Attackinput called");
       //flip necessary things horizontal.
-      anim.Play("Attack");
+      if(sprite.FlipH) {
+        anim.Play("AttackLeft");
+      } else {
+        anim.Play("AttackRight");
+      }
     }
 
     public void CheckAttackTargets() {
@@ -138,7 +162,7 @@ public class Sneak2 : KinematicBody2D
       foreach(PhysicsBody2D body in targets) {
         if (body is Enemy) {
           Enemy enemy = (Enemy) body;
-          enemy.health -= 10;
+          enemy.ReceiveDamage();
         } else {
           // GD.Print("Found other bodies that were not enemies");
           // GD.Print(body);
@@ -169,18 +193,61 @@ public class Sneak2 : KinematicBody2D
           return true;
         } else if (target.GetWhichPowerup() == "CaveSpawn") {
           GD.Print("reset spawn point to cave");
+          Node n = GetParent();
+          if (n is TestLevel) {
+            TestLevel l = (TestLevel) n;
+            l.UpdateSpawn("CaveSpawn");
+          }
+          return true;
+        }
+      } 
+
+      return false;
+    }
+
+    public bool _on_ItemCollectHitbox_body_entered(Node body) {
+      if (body is Enemy) {
+        GD.Print("incoming body is enemy");
+        Enemy e = (Enemy) body;
+        ReceiveDamage(e.attackDamage);
+      }
+      return false;
+    }
+
+    public bool ReceiveDamage(int amount) {
+      GD.Print("Sneak receive damage: "+amount);
+      if(timeUntilVuln > 0) {
+        GD.Print("still in iframes");
+        return true;
+      } else {
+        health -= amount;
+        if(health <= 0) {
+          GD.Print("GAME OVER!");
+          //remove player control.
+          iframesAnim.Play("Dead");
+          this.isDead = true;
+          
+          return false;
+        } else {
+          timeUntilVuln = iframes;
+          //play flashing iframes animation
+          iframesAnim.Play("Blinking");
           return true;
         }
       }
-      // if(!this.isPickedUp) {
-      //   if(body.Name == "Sneak2") {
-      //     GD.Print("found player");
-      //     mapRef.SetCell((int)doorPos.x, (int)doorPos.y, -1);
-      //     this.Visible = false;
-      //     this.isPickedUp = true;
-      //     return true;
-      //   }
-      // }
-      return false;
+    }
+
+    public void _on_IframesAnimation_animation_finished(string which) {
+      GD.Print("iframes animation finished: "+which);
+      if (which == "Dead") {
+        Node n = GetParent();
+        if (n is TestLevel) {
+          TestLevel l = (TestLevel) n;
+          l.UpdateSpawn("PlayerSpawn");
+          l.Respawn();
+          this.isDead = false;
+          health = maxHealth;
+        }
+      }
     }
 }
