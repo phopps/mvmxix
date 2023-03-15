@@ -50,7 +50,7 @@ public class GroundEnemy : Enemy
 
     public void Gravity(float delta)
     {
-        velocity.y = velocity.y + gravity * delta;
+        velocity.y += gravity * delta;
     }
 
     public void EnemyMovement(float delta)
@@ -127,9 +127,10 @@ public class GroundEnemy : Enemy
     {
         isAttacking = false;
     }
-    
-    public override void ReceiveDamage() {
-      anim2.Play("Damaged");
-      health -= 10;
+
+    public override void ReceiveDamage()
+    {
+        anim2.Play("Damaged");
+        health -= 10;
     }
 }
