@@ -1,8 +1,6 @@
 using Godot;
 // using static Game;
 
-// TODO: Extra air jump, attack strength, special Launch (superjump), wall jumping
-
 public class Tiny : Player
 {
     // Tiny default values

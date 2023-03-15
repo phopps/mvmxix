@@ -1,7 +1,5 @@
 using Godot;
 
-// TODO: Global constants, methods, resources, etc.
-
 // Global autoloaded singleton for game management
 public class Game : Node
 {
@@ -185,7 +183,8 @@ public class Game : Node
     }
 
     // Set previous and current players
-    public void SetCurrentPlayer(string player) {
+    public void SetCurrentPlayer(string player)
+    {
         previousPlayer = currentPlayer;
         currentPlayer = player;
     }

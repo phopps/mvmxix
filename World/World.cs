@@ -1,8 +1,6 @@
 using Godot;
 using static Game;
 
-// TODO: Player character switching
-
 public class World : Node2D
 {
     // Signals emitted from this script
@@ -12,7 +10,7 @@ public class World : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready. (World.cs)");
+        GD.Print(Name + " is ready. (World.cs)");
 
         // Set starting player character to sneak
         game.currentPlayer = "sneak";

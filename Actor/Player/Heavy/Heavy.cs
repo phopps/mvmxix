@@ -1,8 +1,6 @@
 using Godot;
 // using static Game;
 
-// TODO: Attack strength, special Thump, allow obstacle pushing/breaking, wall jumping
-
 public class Heavy : Player
 {
     // Heavy default values
