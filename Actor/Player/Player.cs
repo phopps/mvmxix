@@ -1,7 +1,5 @@
 using Godot;
 
-// TODO: Air jump (double jump), wall jump, coyote time, jump buffer, jump cutoff, attack, special, interact, damage
-
 public class Player : Actor
 {
     // Player variables can be adjusted live in the Godot Editor while game is running

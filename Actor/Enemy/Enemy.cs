@@ -1,6 +1,5 @@
-using Godot;
-using System;
 using System.Collections.Generic;
+using Godot;
 
 public abstract class Enemy : Actor
 {

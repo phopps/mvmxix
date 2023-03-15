@@ -53,9 +53,10 @@ public class Sneak2 : KinematicBody2D
         velocity.x = 0;
 
         // Get user input for horizontal movement
-        if (!isDead) {
-          if (Input.IsActionPressed("right")) { velocity.x += moveSpeed; }
-          if (Input.IsActionPressed("left")) { velocity.x -= moveSpeed; }
+        if (!isDead)
+        {
+            if (Input.IsActionPressed("right")) { velocity.x += moveSpeed; }
+            if (Input.IsActionPressed("left")) { velocity.x -= moveSpeed; }
         }
 
         // Apply gravity
@@ -65,49 +66,56 @@ public class Sneak2 : KinematicBody2D
         if (Input.IsActionPressed("up")) { }
         if (Input.IsActionPressed("down")) { }
 
-        
+
         // if (Input.IsActionPressed("attack")) {
         //   AttackInput();
         // }
 
         // Jump on next frame
-        if (!isDead) {
-          if (Input.IsActionJustPressed("jump"))
-          {
-              // Jump if player has jumps remaining
-              if (jumpsRemaining >= jumpsUsed)
-              {
-                  Jump();
-              }
-          }
+        if (!isDead)
+        {
+            if (Input.IsActionJustPressed("jump"))
+            {
+                // Jump if player has jumps remaining
+                if (jumpsRemaining >= jumpsUsed)
+                {
+                    Jump();
+                }
+            }
         }
         // Reset jump counters if player is on floor
-        if (IsOnFloor()) {
-          // GD.Print("on the ground.");
-          jumpsRemaining = maxJumpsRemaining;
-          jumpsUsed = 0;
-          if(!this.wasOnFloorLastFrame) {
-            // GD.Print("======== Just landed!!!! =======");
-            //play landing
-            if(playerUsedJump) {
-              aud_landing.Play();
-              // GD.Print("set playerUsedJump to false");
-              playerUsedJump = false;
+        if (IsOnFloor())
+        {
+            // GD.Print("on the ground.");
+            jumpsRemaining = maxJumpsRemaining;
+            jumpsUsed = 0;
+            if (!wasOnFloorLastFrame)
+            {
+                // GD.Print("======== Just landed!!!! =======");
+                //play landing
+                if (playerUsedJump)
+                {
+                    aud_landing.Play();
+                    // GD.Print("set playerUsedJump to false");
+                    playerUsedJump = false;
+                }
+                wasOnFloorLastFrame = true;
+                // timeSinceLastLanding = 0.0f;
             }
-            this.wasOnFloorLastFrame = true;
-            // timeSinceLastLanding = 0.0f;
-          }
-        } else {
-          // GD.Print("in the air?");
-          this.wasOnFloorLastFrame = false;
+        }
+        else
+        {
+            // GD.Print("in the air?");
+            wasOnFloorLastFrame = false;
         }
         // timeSinceLastLanding += delta;
 
         // Move the player
         velocity = MoveAndSlide(velocity, Vector2.Up);
 
-        if(velocity.x != 0 && !aud_step.Playing && IsOnFloor()) {
-          aud_step.Play();
+        if (velocity.x != 0 && !aud_step.Playing && IsOnFloor())
+        {
+            aud_step.Play();
         }
 
         // Check which direction player is moving horizontally
@@ -128,46 +136,58 @@ public class Sneak2 : KinematicBody2D
         }
 
         //handle iframes
-        if(timeUntilVuln > 0) {
-          timeUntilVuln -= delta;
+        if (timeUntilVuln > 0)
+        {
+            timeUntilVuln -= delta;
         }
     }
 
-    public override void _Input(InputEvent @event) {
-      if (@event.IsActionPressed("attack")) {
-        AttackInput();
-      }
-      
-      if (@event.IsActionPressed("respawn")) {
-        this.isDead = false;
-      }
-    }
-
-    public void AttackInput() {
-      //this is when the user triggers the event
-      // GD.Print("Attackinput called");
-      //flip necessary things horizontal.
-      if(sprite.FlipH) {
-        anim.Play("AttackLeft");
-      } else {
-        anim.Play("AttackRight");
-      }
-    }
-
-    public void CheckAttackTargets() {
-      //triggered when the animation has an active hitbox, should we deal damage to targets?
-      
-      Godot.Collections.Array targets = attackHitbox.GetOverlappingBodies();
-
-      foreach(PhysicsBody2D body in targets) {
-        if (body is Enemy) {
-          Enemy enemy = (Enemy) body;
-          enemy.ReceiveDamage();
-        } else {
-          // GD.Print("Found other bodies that were not enemies");
-          // GD.Print(body);
+    public override void _Input(InputEvent @event)
+    {
+        if (@event.IsActionPressed("attack"))
+        {
+            AttackInput();
         }
-      }
+
+        if (@event.IsActionPressed("respawn"))
+        {
+            isDead = false;
+        }
+    }
+
+    public void AttackInput()
+    {
+        //this is when the user triggers the event
+        // GD.Print("Attackinput called");
+        //flip necessary things horizontal.
+        if (sprite.FlipH)
+        {
+            anim.Play("AttackLeft");
+        }
+        else
+        {
+            anim.Play("AttackRight");
+        }
+    }
+
+    public void CheckAttackTargets()
+    {
+        //triggered when the animation has an active hitbox, should we deal damage to targets?
+
+        Godot.Collections.Array targets = attackHitbox.GetOverlappingBodies();
+
+        foreach (PhysicsBody2D body in targets)
+        {
+            if (body is Enemy enemy)
+            {
+                enemy.ReceiveDamage();
+            }
+            else
+            {
+                // GD.Print("Found other bodies that were not enemies");
+                // GD.Print(body);
+            }
+        }
     }
 
     public void Jump()
@@ -182,72 +202,86 @@ public class Sneak2 : KinematicBody2D
         // GD.Print("set playerUsedJump to true");
         playerUsedJump = true;
     }
-    
-    public bool _on_Area2D_area_entered(Node body){
-      GD.Print(body);
-      if (body is PowerupPickup) {
-        PowerupPickup target = (PowerupPickup) body; //FIXME - breaks if the target is not PowerupPickup. Need to make this check safely.
-        if(target.GetWhichPowerup() == "TripleJump") {
-          GD.Print("found triplejump");
-          this.hasTripleJump = true;
-          return true;
-        } else if (target.GetWhichPowerup() == "CaveSpawn") {
-          GD.Print("reset spawn point to cave");
-          Node n = GetParent();
-          if (n is TestLevel) {
-            TestLevel l = (TestLevel) n;
-            l.UpdateSpawn("CaveSpawn");
-          }
-          return true;
-        }
-      } 
 
-      return false;
+    public bool _on_Area2D_area_entered(Node body)
+    {
+        GD.Print(body);
+        if (body is PowerupPickup target)
+        {
+            if (target.GetWhichPowerup() == "TripleJump")
+            {
+                GD.Print("found triplejump");
+                hasTripleJump = true;
+                return true;
+            }
+            else if (target.GetWhichPowerup() == "CaveSpawn")
+            {
+                GD.Print("reset spawn point to cave");
+                Node parent = GetParent();
+                if (parent is TestLevel level)
+                {
+                    level.UpdateSpawn("CaveSpawn");
+                }
+                return true;
+            }
+        }
+
+        return false;
     }
 
-    public bool _on_ItemCollectHitbox_body_entered(Node body) {
-      if (body is Enemy) {
-        GD.Print("incoming body is enemy");
-        Enemy e = (Enemy) body;
-        ReceiveDamage(e.attackDamage);
-      }
-      return false;
+    public bool _on_ItemCollectHitbox_body_entered(Node body)
+    {
+        if (body is Enemy enemy)
+        {
+            GD.Print("incoming body is enemy");
+            ReceiveDamage(enemy.attackDamage);
+        }
+        return false;
     }
 
-    public bool ReceiveDamage(int amount) {
-      GD.Print("Sneak receive damage: "+amount);
-      if(timeUntilVuln > 0) {
-        GD.Print("still in iframes");
-        return true;
-      } else {
-        health -= amount;
-        if(health <= 0) {
-          GD.Print("GAME OVER!");
-          //remove player control.
-          iframesAnim.Play("Dead");
-          this.isDead = true;
-          
-          return false;
-        } else {
-          timeUntilVuln = iframes;
-          //play flashing iframes animation
-          iframesAnim.Play("Blinking");
-          return true;
+    public bool ReceiveDamage(int amount)
+    {
+        GD.Print("Sneak receive damage: " + amount);
+        if (timeUntilVuln > 0)
+        {
+            GD.Print("still in iframes");
+            return true;
         }
-      }
+        else
+        {
+            health -= amount;
+            if (health <= 0)
+            {
+                GD.Print("GAME OVER!");
+                //remove player control.
+                iframesAnim.Play("Dead");
+                isDead = true;
+
+                return false;
+            }
+            else
+            {
+                timeUntilVuln = iframes;
+                //play flashing iframes animation
+                iframesAnim.Play("Blinking");
+                return true;
+            }
+        }
     }
 
-    public void _on_IframesAnimation_animation_finished(string which) {
-      GD.Print("iframes animation finished: "+which);
-      if (which == "Dead") {
-        Node n = GetParent();
-        if (n is TestLevel) {
-          TestLevel l = (TestLevel) n;
-          l.UpdateSpawn("PlayerSpawn");
-          l.Respawn();
-          this.isDead = false;
-          health = maxHealth;
+    public void _on_IframesAnimation_animation_finished(string which)
+    {
+        GD.Print("iframes animation finished: " + which);
+        if (which == "Dead")
+        {
+            Node parent = GetParent();
+            if (parent is TestLevel level)
+            {
+                level.UpdateSpawn("PlayerSpawn");
+                level.Respawn();
+                isDead = false;
+                health = maxHealth;
+            }
         }
-      }
     }
 }

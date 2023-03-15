@@ -68,8 +68,9 @@ public class FlyingEnemy : Enemy
         GD.Print("Collision with flying enemy!");
     }
 
-    public override void ReceiveDamage() {
-      anim.Play("Damaged");
-      health -= 10;
+    public override void ReceiveDamage()
+    {
+        anim.Play("Damaged");
+        health -= 10;
     }
 }
