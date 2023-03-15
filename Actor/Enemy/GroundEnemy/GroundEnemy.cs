@@ -1,5 +1,5 @@
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using Godot;
 
 public class GroundEnemy : Enemy
@@ -17,22 +17,27 @@ public class GroundEnemy : Enemy
             { "left", Vector2.Left},
             { "right", Vector2.Right}
         };
+        attackDamage = 15;
     }
 
     int option = 1;
     public KinematicBody2D playerBody;
     AnimatedSprite EnemySprite;
     CollisionShape2D EnemyLeft, EnemyRight;
-    AnimationPlayer EnemyAttack;
+    AnimationPlayer anim;
+    AnimationPlayer anim2;
     Timer EnemyDelay;
 
     public override void _Ready()
     {
+        GD.Print(Name + " is ready. (GroundEnemy.cs)");
+
         EnemySprite = GetNode<AnimatedSprite>("AnimatedSprite");
         EnemyDelay = GetNode<Timer>("Timer");
         EnemyLeft = GetNode<CollisionShape2D>("LineOfSight/LookLeft");
         EnemyRight = GetNode<CollisionShape2D>("LineOfSight/LookRight");
-        EnemyAttack = GetNode<AnimationPlayer>("AnimationPlayer");
+        anim = GetNode<AnimationPlayer>("AnimationPlayer");
+        anim2 = GetNode<AnimationPlayer>("AnimationPlayer2");
     }
 
     public override void _PhysicsProcess(float delta)
@@ -80,9 +85,9 @@ public class GroundEnemy : Enemy
     public void AttackAnimation()
     {
         if (!EnemySprite.FlipH)
-            EnemyAttack.Play("AttackRight");
+            anim.Play("AttackRight");
         else
-            EnemyAttack.Play("AttackLeft");
+            anim.Play("AttackLeft");
     }
 
     // Movement Pattern
@@ -121,5 +126,10 @@ public class GroundEnemy : Enemy
     public void _StopDamage(Player body)
     {
         isAttacking = false;
+    }
+    
+    public override void ReceiveDamage() {
+      anim2.Play("Damaged");
+      health -= 10;
     }
 }

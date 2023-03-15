@@ -7,7 +7,8 @@ public class FlyingEnemy : Enemy
     public FlyingEnemy()
     {
         name = "Flying Enemy";
-        health = 10;
+        health = 20;
+        attackDamage = 5;
         moveDirections = new Dictionary<string, Vector2>()
         {
             // Right
@@ -24,13 +25,16 @@ public class FlyingEnemy : Enemy
     int option = 0;
     AnimatedSprite FlyingSprite;
     Timer FlyingDelay;
+    private AnimationPlayer anim;
 
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready. (FlyingEnemy.cs)");
+        GD.Print(Name + " is ready. (FlyingEnemy.cs)");
 
         FlyingSprite = GetNode<AnimatedSprite>("AnimatedSprite");
         FlyingDelay = GetNode<Timer>("Timer");
+
+        anim = GetNode<AnimationPlayer>("AnimationPlayer");
     }
 
     public override void _PhysicsProcess(float delta)
@@ -62,5 +66,10 @@ public class FlyingEnemy : Enemy
     public void _Damage(Area2D aBody)
     {
         GD.Print("Collision with flying enemy!");
+    }
+
+    public override void ReceiveDamage() {
+      anim.Play("Damaged");
+      health -= 10;
     }
 }
