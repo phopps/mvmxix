@@ -21,7 +21,7 @@ public class HUD : CanvasLayer
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GD.Print(this.Name + " is ready. (HUD.cs)");
+        GD.Print(Name + " is ready. (HUD.cs)");
 
         anim = GetNode<AnimationPlayer>("AnimationPlayer");
         anim.PlayBackwards("pause");
@@ -85,7 +85,7 @@ public class HUD : CanvasLayer
             }
             else if (e.IsActionPressed("ui_select"))
             {
-              aud_select.Play();
+                aud_select.Play();
                 if (currentSelect == 4)
                 {
                     onTestButton(true);
