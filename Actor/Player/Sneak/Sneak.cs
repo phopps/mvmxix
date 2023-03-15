@@ -1,8 +1,6 @@
 using Godot;
 using static Game;
 
-// TODO: Switch to MoveAndSlideWithSnap for movement, wall and ceiling crawling, collision detection raycast, rotate to match surface on collision, attack strength (can be default), special Dash, no need for wall jumping (disable if needed)
-
 public class Sneak : Player
 {
     AnimationPlayer sneakAttack;
@@ -28,10 +26,13 @@ public class Sneak : Player
 
     public override void Attack()
     {
-      GD.Print("triggered attack?");
-        if (!_sprite.FlipH) {
+        GD.Print("triggered attack?");
+        if (!_sprite.FlipH)
+        {
             sneakAttack.Play("AttackRight");
-        } else {
+        }
+        else
+        {
             sneakAttack.Play("AttackLeft");
         }
     }
@@ -42,22 +43,26 @@ public class Sneak : Player
     //     GD.Print(enemy.health);
     // }
 
-    public void NewAttack() {
+    public void NewAttack()
+    {
 
-      //if HitBox is active
-      // check for overlapping areas
-      // if overlapping area is enemy, do damage.
-      Godot.Collections.Array targets = hitBox.GetOverlappingBodies();
+        //if HitBox is active
+        // check for overlapping areas
+        // if overlapping area is enemy, do damage.
+        Godot.Collections.Array targets = hitBox.GetOverlappingBodies();
 
-      foreach(PhysicsBody2D body in targets) {
-        if (body is Enemy) {
-          Enemy enemy = (Enemy) body;
-          enemy.health -= 10;
-        } else {
-          GD.Print("Found other bodies that were not enemies");
-          GD.Print(body);
+        foreach (PhysicsBody2D body in targets)
+        {
+            if (body is Enemy enemy)
+            {
+                enemy.health -= 10;
+            }
+            else
+            {
+                GD.Print("Found other bodies that were not enemies");
+                GD.Print(body);
+            }
         }
-      }
 
     }
 
