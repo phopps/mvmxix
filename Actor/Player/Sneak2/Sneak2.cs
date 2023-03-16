@@ -1,3 +1,4 @@
+using System.Drawing.Drawing2D;
 using Godot;
 
 public class Sneak2 : KinematicBody2D
@@ -12,8 +13,8 @@ public class Sneak2 : KinematicBody2D
     [Export] public float jumpSpeed = 450;
     [Export] public Vector2 velocity;
     [Export] public int jumpsUsed = 0;
-    [Export] public int jumpsRemaining = 2;
-    [Export] public int maxJumpsRemaining = 2;
+    [Export] public int jumpsRemaining = 1;
+    [Export] public int maxJumpsRemaining = 1;
     [Export] public bool justJumped;
     private Sprite sprite;
     private bool hasTripleJump = false;
@@ -28,6 +29,12 @@ public class Sneak2 : KinematicBody2D
     [Export] public float iframes = 1.0f;
     private float timeUntilVuln = 0.0f;
     private bool isDead = false;
+
+    // Dash special ability variables
+    private bool _hasDash = false;
+    [Export] public float dashSpeed = 600;
+    private float timeSinceLastDash = 0.0f;
+    private bool _isDashing = false;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -82,6 +89,12 @@ public class Sneak2 : KinematicBody2D
                     Jump();
                 }
             }
+
+            if (Input.IsActionJustPressed("special"))
+            {
+                Dash();
+            }
+
         }
         // Reset jump counters if player is on floor
         if (IsOnFloor())
@@ -203,6 +216,20 @@ public class Sneak2 : KinematicBody2D
         playerUsedJump = true;
     }
 
+    public void Dash()
+    {
+        if (sprite.FlipH)
+        {
+            // anim.Play("DashLeft");
+            // velocity.x -= dashSpeed;
+        }
+        else
+        {
+            // anim.Play("DashRight");
+            // velocity.x += dashSpeed;
+        }
+    }
+
     public bool _on_Area2D_area_entered(Node body)
     {
         GD.Print(body);
@@ -211,7 +238,11 @@ public class Sneak2 : KinematicBody2D
             if (target.GetWhichPowerup() == "TripleJump")
             {
                 GD.Print("found triplejump");
-                hasTripleJump = true;
+                if (!hasTripleJump)
+                {
+                    hasTripleJump = true;
+                    maxJumpsRemaining = 2;
+                }
                 return true;
             }
             else if (target.GetWhichPowerup() == "CaveSpawn")
@@ -281,6 +312,9 @@ public class Sneak2 : KinematicBody2D
                 level.Respawn();
                 isDead = false;
                 health = maxHealth;
+                maxJumpsRemaining = 1;
+                hasTripleJump = false;
+                _hasDash = false;
             }
         }
     }
