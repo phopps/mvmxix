@@ -10,7 +10,8 @@ config_version=4
 
 [application]
 
-config/name="mvmxix"
+config/name="Monsters Vs Robots"
+config/description="Made for Metroidvania Month 19"
 run/main_scene="res://TestLevel.tscn"
 run/delta_sync_after_draw=true
 boot_splash/image="res://World/Icon/icon.png"
