@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Actor/Player/Player.gdshader" type="Shader" id=1]
-[ext_resource path="res://Actor/Player/Sneak2/Sneak2.png" type="Texture" id=2]
+[ext_resource path="res://Actor/Player/Sneak/Sneak.png" type="Texture" id=2]
 [ext_resource path="res://Actor/Player/Sneak2/Sneak2.cs" type="Script" id=3]
 [ext_resource path="res://Audio/Fantasy_Game_Footstep_Grass_Heavy_D.wav" type="AudioStream" id=4]
 [ext_resource path="res://Audio/Fantasy_Game_Attack_Cloth_Armor_Hit_B.wav" type="AudioStream" id=5]
