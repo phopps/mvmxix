@@ -10,7 +10,7 @@ shader_param/speed = 0.5
 shader_param/angle = 45.0
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+extents = Vector2( 7, 7 )
 
 [node name="Dude" type="KinematicBody2D"]
 collision_layer = 2
@@ -22,6 +22,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 2 )
 texture = ExtResource( 1 )
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
