@@ -21,7 +21,7 @@ extents = Vector2( 23, 7 )
 extents = Vector2( 23, 7 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 15.25, 9.5 )
+extents = Vector2( 24.5, 17 )
 
 [sub_resource type="Animation" id=9]
 resource_name = "AttackLeft"
