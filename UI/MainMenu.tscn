@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://UI/MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://UI/title.png" type="Texture" id=1]
 [ext_resource path="res://World/backgroundBlend.tres" type="Texture" id=2]
 [ext_resource path="res://MainMenu.cs" type="Script" id=3]
 
@@ -105,23 +105,13 @@ position = Vector2( 361.25, 485 )
 scale = Vector2( 0.356201, 490 )
 texture = ExtResource( 2 )
 
-[node name="Title" type="RichTextLabel" parent="."]
-anchor_left = 0.501
-anchor_right = 0.501
-margin_left = -159.72
-margin_top = 29.0
-margin_right = 165.28
-margin_bottom = 87.0
-theme = ExtResource( 1 )
-text = "Monsters vs Robots"
-
 [node name="Label" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -304.0
-margin_top = 136.0
-margin_right = -69.0
-margin_bottom = 272.0
+margin_left = -700.0
+margin_top = 330.0
+margin_right = -465.0
+margin_bottom = 466.0
 text = "WASD - Move
 Shift - Attack
 Space - Start Game
@@ -141,10 +131,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -93.0
-margin_top = -137.0
-margin_right = 100.0
-margin_bottom = -100.0
+margin_left = -97.0
+margin_top = -151.0
+margin_right = 96.0
+margin_bottom = -114.0
 action_mode = 0
 shortcut = SubResource( 2 )
 text = "Start Game"
@@ -152,6 +142,11 @@ text = "Start Game"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 3 )
 anims/StartGame = SubResource( 4 )
+
+[node name="Title2" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.772549 )
+position = Vector2( 363, 239 )
+texture = ExtResource( 1 )
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
