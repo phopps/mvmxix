@@ -7,8 +7,10 @@ public class Sneak2 : KinematicBody2D
     [Export] public int maxHealth = 50;
     private int health;
     [Export] public float gravity = 3000;
-    [Export] public float moveSpeed = 300;
-    // [Export] public float maxMoveSpeed = 300;
+    [Export] public float acceleration = 300;
+    [Export] public float maxMoveSpeed = 300;
+    [Export] public float friction = 100;
+    [Export] public float frictionDeadZone = 0.01f;
     [Export] public float jumpSpeed = 450;
     [Export] public Vector2 velocity;
     [Export] public int jumpsUsed = 0;
@@ -28,6 +30,9 @@ public class Sneak2 : KinematicBody2D
     [Export] public float iframes = 1.0f;
     private float timeUntilVuln = 0.0f;
     private bool isDead = false;
+    private bool isDashing = false;
+    private float dashDuration = 0.5f;
+    private float dashTimer = 0.0f;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -55,12 +60,46 @@ public class Sneak2 : KinematicBody2D
         // Get user input for horizontal movement
         if (!isDead)
         {
-            if (Input.IsActionPressed("right")) { velocity.x += moveSpeed; }
-            if (Input.IsActionPressed("left")) { velocity.x -= moveSpeed; }
+            if (Input.IsActionPressed("right")) { velocity.x += maxMoveSpeed; }
+            if (Input.IsActionPressed("left")) { velocity.x -= maxMoveSpeed; }
         }
 
+        // Different approach
+        // if (Input.IsActionPressed("right")) {
+        //   if(velocity.x < 0) {
+        //     velocity.x += acceleration * delta * 2;
+        //   } else {
+        //     velocity.x += acceleration * delta;
+        //   }
+        //   if (velocity.x > maxMoveSpeed) {
+        //     velocity.x = maxMoveSpeed;
+        //   }
+        // } 
+        // if (Input.IsActionPressed("left")) {
+        //   if(velocity.x > 0) {
+        //     velocity.x -= acceleration * delta * 2;
+        //   } else {
+        //     velocity.x -= acceleration * delta;
+        //   }
+        //   if (velocity.x < maxMoveSpeed*-1) {
+        //     velocity.x = maxMoveSpeed*-1;
+        //   }
+        // }
+        // if( !Input.IsActionPressed("left") && !Input.IsActionPressed("right")) {
+        //   //no input, slow towards zero
+        //   if (velocity.x > frictionDeadZone) {
+        //     velocity.x -= friction * delta;
+        //   } else if (velocity.x < frictionDeadZone*-1) {
+        //     velocity.x += friction * delta;
+        //   } else {
+        //     velocity.x = 0;
+        //   }
+        // }
+
         // Apply gravity
-        velocity.y += gravity * delta;
+        if(!isDashing) {
+          velocity.y += gravity * delta;
+        }
 
         // Get user input for vertical movement
         if (Input.IsActionPressed("up")) { }
@@ -140,6 +179,16 @@ public class Sneak2 : KinematicBody2D
         {
             timeUntilVuln -= delta;
         }
+    }
+
+    public void Dash() {
+      if(dashTimer > 0 || isDashing == true) {
+        return;
+      } else {
+        //dash in a direction
+        isDashing = true;
+        dashTimer = dashDuration;
+      }
     }
 
     public override void _Input(InputEvent @event)
