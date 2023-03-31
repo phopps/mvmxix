@@ -10,7 +10,8 @@ config_version=4
 
 [application]
 
-config/name="mvmxix"
+config/name="Monsters Vs Robots"
+config/description="Made for Metroidvania Month 19"
 run/main_scene="res://TestLevel.tscn"
 run/delta_sync_after_draw=true
 boot_splash/image="res://World/Icon/icon.png"
@@ -126,6 +127,7 @@ jump={
 attack={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777237,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
 special={
@@ -143,6 +145,7 @@ interact={
 respawn={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":10,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
 
